@@ -3,22 +3,22 @@
    =============================== */
 :root {
   /* Primary Colors */
-  --medicine-primary-red: #B71C1C;
-  --medicine-primary-red-light: #C62828;
-  --medicine-primary-brown: #5D4037;
-  --medicine-primary-brown-light: #6D4C41;
-  --medicine-primary-orange: #FF8F00;
-  --medicine-primary-orange-light: #FFA000;
+  --medicine-primary-red: #b71c1c;
+  --medicine-primary-red-light: #c62828;
+  --medicine-primary-brown: #5d4037;
+  --medicine-primary-brown-light: #6d4c41;
+  --medicine-primary-orange: #ff8f00;
+  --medicine-primary-orange-light: #ffa000;
 
   /* Secondary Colors */
-  --medicine-white: #FFFFFF;
-  --medicine-light-gray: #F5F5F5;
+  --medicine-white: #ffffff;
+  --medicine-light-gray: #f5f5f5;
   --medicine-dark-gray: #424242;
 
   /* Complementary Colors */
-  --medicine-dark-blue: #1565C0;
-  --medicine-medical-green: #388E3C;
-  --medicine-light-beige: #FFF8E1;
+  --medicine-dark-blue: #1565c0;
+  --medicine-medical-green: #388e3c;
+  --medicine-light-beige: #fff8e1;
 
   /* Component Specific Colors */
   --departments-bg: var(--medicine-light-beige);
@@ -67,7 +67,7 @@
 }
 
 .title-underline {
-  background: url("../images/services/underline1.png") no-repeat;
+  /* background: url("../images/services/underline1.png") no-repeat; */
   background-position: center center;
   background-size: cover;
   width: 120px;
@@ -293,24 +293,36 @@
   animation-fill-mode: both;
 }
 
-.department-card:nth-child(1) { animation-delay: 0.1s; }
-.department-card:nth-child(2) { animation-delay: 0.2s; }
-.department-card:nth-child(3) { animation-delay: 0.3s; }
-.department-card:nth-child(4) { animation-delay: 0.4s; }
-.department-card:nth-child(5) { animation-delay: 0.5s; }
-.department-card:nth-child(6) { animation-delay: 0.6s; }
+.department-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.department-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.department-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.department-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.department-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.department-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 /* ===============================
    📐 RTL Support
    =============================== */
-[dir="ltr"] .card-content {
+[dir='ltr'] .card-content {
   text-align: left;
 }
 
-[dir="ltr"] .card-title {
+[dir='ltr'] .card-title {
   text-align: left;
 }
 
-[dir="ltr"] .card-description {
+[dir='ltr'] .card-description {
   text-align: left;
 }
