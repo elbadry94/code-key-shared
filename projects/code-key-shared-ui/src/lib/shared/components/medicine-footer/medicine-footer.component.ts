@@ -28,13 +28,7 @@ export interface FooterSocialLink {
   title: string;
 }
 
-export interface FooterCopyright {
-  text: string;
-  links: Array<{
-    text: string;
-    url: string;
-  }>;
-}
+
 
 @Component({
   selector: 'ck-medicine-footer',

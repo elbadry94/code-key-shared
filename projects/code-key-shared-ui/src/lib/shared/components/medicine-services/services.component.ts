@@ -9,7 +9,6 @@ export interface ServiceItem {
   description: string;
   iconPath: string;
   iconAlt: string;
-  readMoreUrl?: string;
 }
 
 @Component({
