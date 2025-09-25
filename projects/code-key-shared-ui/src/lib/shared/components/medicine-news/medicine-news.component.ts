@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 export interface NewsItem {
   id: number;
@@ -9,13 +10,12 @@ export interface NewsItem {
   specialty: string;
   date: string;
   imageUrl: string;
-  readMoreUrl?: string;
 }
 
 @Component({
   selector: 'ck-medicine-news',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './medicine-news.component.html',
   styleUrls: ['./medicine-news.component.css']
 })
@@ -28,6 +28,13 @@ export class MedicineNewsComponent implements OnInit, OnDestroy {
   @Input() autoPlay!: boolean;
   @Input() autoPlayInterval!: number;
   @Input() isRTL!: boolean;
+  @Input() Continue_Reading!: string|'Continue Reading';
+
+  /**
+   * Generic router link function to be passed from parent
+   * Example: (item) => ['/news', item.id]
+   */
+  @Input() readMoreLinkFn?: (item: NewsItem) => any;
 
   currentIndex = 0;
   private autoPlayTimer?: any;

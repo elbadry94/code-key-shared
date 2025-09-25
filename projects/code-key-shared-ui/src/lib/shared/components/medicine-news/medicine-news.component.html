@@ -17,9 +17,9 @@
                    *ngFor="let item of visibleItems; trackBy: trackByFn; let i = index"
                    [style.animation-delay]="i * 0.1 + 's'"
                    tabindex="0"
-                   (click)="onCardClick($event, item.readMoreUrl)"
-                   (keydown.enter)="onCardClick($event, item.readMoreUrl)"
-                   (keydown.space)="onCardClick($event, item.readMoreUrl)">
+                   (click)="onCardClick($event, readMoreLinkFn ? readMoreLinkFn(item) : null)"
+                   (keydown.enter)="onCardClick($event, readMoreLinkFn ? readMoreLinkFn(item) : null)"
+                   (keydown.space)="onCardClick($event, readMoreLinkFn ? readMoreLinkFn(item) : null)">
             
             <div class="card-image">
               <img [src]="item.imageUrl" [alt]="item.title" loading="lazy">
@@ -35,11 +35,11 @@
               </div>
               <h3 class="card-title">{{ item.title }}</h3>
               <p class="card-excerpt">{{ item.excerpt }}</p>
-              <a [href]="item.readMoreUrl || '#'" 
-                 class="read-more" 
-                 *ngIf="item.readMoreUrl"
-                 (click)="onReadMoreClick($event)">
-                Continue Reading <i class="fas fa-arrow-left" [class.fa-arrow-right]="!isRTL"></i>
+              <a
+                [routerLink]="readMoreLinkFn ? readMoreLinkFn(item) : null"
+                class="read-more"
+                (click)="onReadMoreClick($event)">
+                {{ Continue_Reading}} <i class="fas fa-arrow-left" [class.fa-arrow-right]="!isRTL"></i>
               </a>
             </div>
           </article>

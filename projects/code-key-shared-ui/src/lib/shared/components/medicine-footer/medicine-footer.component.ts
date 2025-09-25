@@ -48,6 +48,9 @@ export class MedicineFooterComponent {
   @Input() quickLinks!: FooterQuickLink[];
   @Input() latestPosts!: FooterPost[];
   @Input() showNewsletter!: boolean;
+  @Input() quick_links!: string|'quick links';
+  @Input() latest_posts!: string|'latest posts';
+
 
   @Output() linkClick = new EventEmitter<{type: string, item: any}>();
   @Output() socialClick = new EventEmitter<FooterSocialLink>();

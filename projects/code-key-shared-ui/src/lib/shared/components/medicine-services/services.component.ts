@@ -1,6 +1,7 @@
 // services.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 export interface ServiceItem {
   id?: string;
@@ -14,7 +15,7 @@ export interface ServiceItem {
 @Component({
   selector: 'ck-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css'],
   encapsulation: ViewEncapsulation.None // هذا مهم جداً!
@@ -26,6 +27,15 @@ export class ServicesComponent {
   @Input() showAllServicesButton!: boolean;
   @Input() allServicesUrl!: string;
   @Input() allServicesText!: string;
+  @Input() Read_more_btn!: string| 'Read More';
+
+  /**
+   * Generic router link function to be passed from parent
+   * Example: (service) => ['/services', service.id]
+   */
+  @Input() readMoreLinkFn?: (service: ServiceItem) => any;
+
+
 
   @Output() serviceClick = new EventEmitter<ServiceItem>();
   @Output() readMoreClick = new EventEmitter<ServiceItem>();

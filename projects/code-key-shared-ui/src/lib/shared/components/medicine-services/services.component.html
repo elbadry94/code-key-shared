@@ -31,13 +31,13 @@
       <div class="card-content">
         <p class="card-description">{{ service.description }}</p>
         <a
-          [href]="service.readMoreUrl"
+          *ngIf="readMoreLinkFn"
+          [routerLink]="readMoreLinkFn(service)"
           class="readmore-link"
           (click)="onReadMoreClick(service, $event)"
-          *ngIf="service.readMoreUrl"
         >
-          Read more
-        </a>
+          {{Read_more_btn}}
+        </a>    
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface DepartmentItem {
   id?: string;
@@ -22,11 +23,19 @@ export class DepartmentsComponent {
   @Input() sectionTitle!: string;
   @Input() showTitle!: boolean;
 
-  constructor() { }
+  /**
+   * Generic router link function to be passed from parent
+   * Example: (department) => ['/departments', department.id]
+   */
+  @Input() departmentLinkFn?: (department: DepartmentItem) => any;
+
+  constructor(private router: Router) { }
 
   onDepartmentClick(department: DepartmentItem): void {
-    // Emit event or handle click as needed
-    console.log('Department clicked:', department);
+    if (this.departmentLinkFn) {
+      const link = this.departmentLinkFn(department);
+      this.router.navigate(Array.isArray(link) ? link : [link]);
+    }
   }
 
   trackByFn(index: number, item: DepartmentItem): string {
