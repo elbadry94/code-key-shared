@@ -1,8 +1,16 @@
+/* إخفاء أزرار التحكم في الكاروسيل بالكامل */
+.hero-controls {
+  display: none !important;
+}
+/* إخفاء مؤشرات الكاروسيل */
+.hero-indicators {
+  display: none !important;
+}
 /* ===============================
    🎨 Medicine Hero Section - Updated Color Scheme
    =============================== */
 :root {
-  /* Primary Colors */
+  /* Primary Luxor Medical Colors */
   --medicine-primary-red: #B71C1C;
   --medicine-primary-red-light: #C62828;
   --medicine-primary-brown: #5D4037;
@@ -22,7 +30,7 @@
 
   /* Component Specific Colors */
   --hero-bg-overlay: rgba(0, 0, 0, 0.4);
-  --hero-caption-bg: rgba(177, 177, 177, 0.693);
+  --hero-caption-bg: rgba(93, 64, 55, 0.85);
   --hero-text-color: var(--medicine-white);
   --hero-button-border: var(--medicine-primary-orange);
   --hero-button-hover-bg: var(--medicine-primary-orange);
@@ -47,13 +55,14 @@
   width: 100%;
   overflow: hidden;
   direction: rtl;
+  margin-bottom: 50px;
 }
 
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  height: 75vh;
+  min-height: 500px;
 }
 
 /* ===============================
@@ -103,8 +112,8 @@
 .hero-caption {
   background: var(--hero-caption-bg);
   backdrop-filter: blur(5px);
-  padding: 40px;
-  max-width: 600px;
+  padding: 30px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: 50px;
   border-radius: 8px;
@@ -251,6 +260,7 @@
   border-radius: 50%;
   border: none;
   background: var(--hero-indicator-bg);
+  display: none;
   cursor: pointer;
   transition: var(--hero-transition);
   border: 2px solid transparent;
@@ -263,6 +273,8 @@
 
 .indicator:hover {
   transform: scale(1.2);
+    display: none;
+
   background: var(--medicine-primary-orange-light);
 }
 

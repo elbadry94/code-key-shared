@@ -1,43 +1,48 @@
 /* ===============================
-   🎨 Departments Component - Updated Color Scheme
+   🎨 Departments Component - Clean Card Design
    =============================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-  /* Primary Colors */
-  --medicine-primary-red: #b71c1c;
-  --medicine-primary-red-light: #c62828;
-  --medicine-primary-brown: #5d4037;
-  --medicine-primary-brown-light: #6d4c41;
-  --medicine-primary-orange: #ff8f00;
-  --medicine-primary-orange-light: #ffa000;
+  /* Primary Luxor Medical Colors */
+  --medicine-primary-red: #B71C1C;
+  --medicine-primary-red-light: #C62828;
+  --medicine-primary-brown: #5D4037;
+  --medicine-primary-brown-light: #6D4C41;
+  --medicine-primary-orange: #FF8F00;
+  --medicine-primary-orange-light: #FFA000;
+
+ 
 
   /* Secondary Colors */
   --medicine-white: #ffffff;
   --medicine-light-gray: #f5f5f5;
   --medicine-dark-gray: #424242;
+  --medicine-text-dark: #212529;
+  --medicine-border-light: #E8E8E8;
 
   /* Complementary Colors */
-  --medicine-dark-blue: #1565c0;
-  --medicine-medical-green: #388e3c;
-  --medicine-light-beige: #fff8e1;
+  --medicine-medical-green: #388E3C;
+  --medicine-light-beige: #FFF8E1;
 
   /* Component Specific Colors */
-  --departments-bg: var(--medicine-light-beige);
+  --departments-bg: var(--medicine-white);
   --departments-text: var(--medicine-primary-brown);
-  --departments-border: var(--medicine-primary-brown-light);
 
   --departments-card-bg: var(--medicine-white);
-  --departments-card-border: var(--medicine-light-gray);
-  --departments-card-shadow: 0 2px 8px rgba(93, 64, 55, 0.15);
-  --departments-card-hover-shadow: 0 4px 16px rgba(93, 64, 55, 0.25);
+  --departments-card-border: var(--medicine-border-light);
+  --departments-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --departments-card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
-  --departments-icon-bg: var(--medicine-primary-red);
+ ;
   --departments-icon-size: 100px;
 
-  --departments-title-color: var(--medicine-primary-brown);
+  --departments-title-color: var(--medicine-text-dark);
   --departments-description-color: var(--medicine-dark-gray);
 
-  --departments-section-padding: 100px 0;
-  --departments-card-margin: 100px;
+  --departments-section-padding: 80px 0;
 }
 
 /* ===============================
@@ -46,88 +51,109 @@
 .departments-section {
   padding: var(--departments-section-padding);
   background: var(--departments-bg);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ===============================
    📋 Section Title
    =============================== */
 .section-title {
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
-.section-title h3 {
+.section-title h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-  color: var(--departments-title-color);
+  color: var(--departments-text);
   text-transform: uppercase;
   margin: 0;
+  letter-spacing: 1px;
 }
 
 .title-underline {
-  /* background: url("../images/services/underline1.png") no-repeat; */
-  background-position: center center;
-  background-size: cover;
-  width: 120px;
-  height: 21px;
+  background: linear-gradient(90deg, var(--medicine-medical-blue), var(--medicine-medical-blue-light));
+  width: 80px;
+  height: 4px;
   margin: 20px auto 0;
+  border-radius: 2px;
 }
 
 /* ===============================
    🎴 Department Cards Grid
    =============================== */
 .departments-grid {
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0; /* Add top margin for overlapping icons */
+  padding: 0 20px;
 }
 
 /* ===============================
-   🎯 Department Card
+   🎯 Department Card - Clean Design with Overlapping Border
    =============================== */
 .department-card {
-  border: solid 1px var(--departments-card-border);
-  margin-bottom: var(--departments-card-margin);
+  border: 2px solid var(--departments-card-border);
   position: relative;
   background: var(--departments-card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 12px;
+  overflow: visible; /* Changed to visible to allow icon overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 70px 30px 40px 30px; /* Increased top padding for overlapping icon */
+  box-shadow: var(--departments-card-shadow);
+  min-height: 280px;
+  box-sizing: border-box;
+  margin-top: 50px; /* Add margin to accommodate overlapping icon */
 }
 
 .department-card:hover {
   box-shadow: var(--departments-card-hover-shadow);
-  transform: translateY(-5px);
-  border-color: var(--medicine-primary-red-light);
+  transform: translateY(-8px);
+  border-color: var( --medicine-primary-red);
+}
+
+.department-card:focus {
+  outline: 3px solid var( --medicine-primary-red);
+  outline-offset: 2px;
 }
 
 /* ===============================
-   🎨 Card Icon
+   🎨 Card Icon - Overlapping Design
    =============================== */
 .card-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   width: var(--departments-icon-size);
   height: var(--departments-icon-size);
-  background-color: var(--departments-icon-bg);
-  border: solid 3px var(--medicine-white);
+  background: var( --medicine-primary-red);
   border-radius: 50%;
-  margin: auto;
-  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.3);
-  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.25);
+  flex-shrink: 0;
+  position: absolute;
+  top: -50px; /* Position icon to overlap card border */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  border: 4px solid var(--medicine-white); /* White border around icon */
 }
 
 .department-card:hover .card-icon {
-  background-color: var(--medicine-primary-red-light);
-  box-shadow: 0 6px 20px rgba(183, 28, 28, 0.4);
-  transform: translateY(-50%) scale(1.05);
+  background: var(--medicine-primary-red-light);
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
 }
 
 .icon-image {
@@ -135,142 +161,186 @@
   height: 50px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.department-card:hover .icon-image {
+  transform: scale(1.1);
 }
 
 /* ===============================
    📝 Card Content
    =============================== */
 .card-content {
-  padding: 70px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  flex: 1;
+  width: 100%;
 }
 
 .card-title {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
-  color: var(--departments-title-color);
+  color: #5D4037;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin: 0 0 15px 0;
   line-height: 1.3;
+  letter-spacing: 0.8px;
   transition: color 0.3s ease;
 }
 
 .department-card:hover .card-title {
-  color: var(--medicine-primary-red);
+  color: #6D4C41;
 }
 
 .card-description {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  line-height: 1.71;
-  text-align: center;
+  line-height: 1.6;
   color: var(--departments-description-color);
   margin: 0;
+  text-align: center;
 }
 
 /* ===============================
-   📱 Responsive Design
+   📱 Responsive Design - Mobile First
    =============================== */
-@media (max-width: 1024px) {
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
   .departments-section {
-    padding: 80px 0;
-  }
-
-  .card-content {
-    padding: 60px 30px 30px 30px;
-  }
-
-  .department-card {
-    margin-bottom: 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .departments-section {
-    padding: 60px 0;
+    padding: 40px 15px;
   }
 
   .section-title {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
 
-  .section-title h3 {
-    font-size: 28px;
+  .section-title h2 {
+    font-size: 24px;
   }
 
-  .card-content {
-    padding: 50px 20px 20px 20px;
+  .departments-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+    margin: 40px auto 0;
+  }
+
+  .department-card {
+    padding: 60px 20px 30px 20px;
+    min-height: 240px;
+    margin-top: 40px;
+  }
+
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    border: 3px solid var(--medicine-white);
+  }
+
+  .department-card:hover .card-icon {
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  .icon-image {
+    width: 35px;
+    height: 35px;
   }
 
   .card-title {
     font-size: 16px;
+    margin-bottom: 12px;
   }
 
   .card-description {
     font-size: 13px;
-  }
-
-  .department-card {
-    margin-bottom: 60px;
+    line-height: 1.5;
   }
 }
 
-@media (max-width: 576px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
   .departments-section {
-    padding: 40px 0;
+    padding: 60px 20px;
   }
 
   .section-title {
     padding-bottom: 40px;
   }
 
-  .section-title h3 {
-    font-size: 24px;
+  .section-title h2 {
+    font-size: 28px;
   }
 
-  .card-content {
-    padding: 40px 15px 15px 15px;
-  }
-
-  .card-title {
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-
-  .card-description {
-    font-size: 12px;
+  .departments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .department-card {
-    margin-bottom: 40px;
+    padding: 65px 25px 35px 25px;
+    min-height: 260px;
+    margin-top: 45px;
+  }
+
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+  }
+
+  .department-card:hover .card-icon {
+    transform: translateX(-50%) scale(1.08);
+  }
+
+  .icon-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-title {
+    font-size: 17px;
   }
 }
 
-/* ===============================
-   ♿ Accessibility & Focus States
-   =============================== */
-.department-card:focus {
-  outline: 2px solid var(--medicine-primary-red);
-  outline-offset: 2px;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .departments-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .department-card {
+    padding: 68px 25px 35px 25px;
+    margin-top: 48px;
+  }
+
+  .card-icon {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+  }
+
+  .department-card:hover .card-icon {
+    transform: translateX(-50%) scale(1.08);
+  }
+
+  .icon-image {
+    width: 45px;
+    height: 45px;
+  }
 }
 
-.department-card:focus .card-icon {
-  box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.3);
-}
-
-/* ===============================
-   🌙 Dark Theme Support (Optional)
-   =============================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --departments-bg: #2d2d2d;
-    --departments-text: #ffffff;
-    --departments-border: #444444;
-    --departments-card-bg: #1a1a1a;
-    --departments-title-color: #ffffff;
-    --departments-description-color: #cccccc;
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1025px) {
+  .departments-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
@@ -313,16 +383,66 @@
 }
 
 /* ===============================
-   📐 RTL Support
+   ♿ Accessibility Improvements
    =============================== */
-[dir='ltr'] .card-content {
-  text-align: left;
+.department-card:focus-visible {
+  outline: 3px solid var(--departments-icon-bg);
+  outline-offset: 2px;
 }
 
-[dir='ltr'] .card-title {
-  text-align: left;
+.department-card:focus-visible .card-icon {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
 }
 
-[dir='ltr'] .card-description {
-  text-align: left;
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .department-card {
+    animation: none;
+    transition: none;
+  }
+  
+  .department-card:hover {
+    transform: none;
+  }
+  
+  .card-icon,
+  .icon-image {
+    transition: none;
+  }
+  
+  .department-card:hover .card-icon,
+  .department-card:hover .icon-image {
+    transform: none;
+  }
+}
+
+/* ===============================
+   🌐 RTL Support
+   =============================== */
+[dir="rtl"] .card-content {
+  text-align: center;
+}
+
+[dir="rtl"] .card-title,
+[dir="rtl"] .card-description {
+  text-align: center;
+}
+
+/* ===============================
+   🔧 Print Styles
+   =============================== */
+@media print {
+  .department-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .card-icon {
+    background: #f0f0f0 !important;
+  }
+  
+  .icon-image {
+    filter: none;
+  }
 }

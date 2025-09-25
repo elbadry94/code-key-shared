@@ -14,8 +14,8 @@ export class LoadingInterceptor implements HttpInterceptor {
     if (request.url.includes(apiurl)) {
       this.loadingService.setLoading(true, request.url);
 
-      return next.handle(request).pipe(finalize(() => this.loadingService.setLoading(false, request.url)));
-    }
+    //   return next.handle(request).pipe(finalize(() => this.loadingService.setLoading(false, request.url)));
+    // }
 
     return next.handle(request);
   }

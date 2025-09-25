@@ -1,102 +1,91 @@
 <footer class="site-footer footer-default">
-  <div class="footer-main-content">
-    <div class="container">
-      <div class="row">
-        <div class="footer-main-content-elements">
-          <!-- Logo and Contact Info Column -->
-          <div class="footer-main-content-element col-md-4 col-sm-6">
-            <aside class="widget">
-              <div class="widget-title uni-uppercase">
-                <a href="#" (click)="onLinkClick('logo', contactInfo)">
-                  <img [src]="contactInfo.logoPath" [alt]="contactInfo.logoAlt" class="img-responsive">
-                </a>
-              </div>
-              <div class="widget-content">
-                <p>{{ contactInfo.description }}</p>
-                <div class="uni-info-contact">
-                  <ul>
-                    <li>
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      {{ contactInfo.address }}
-                    </li>
-                    <li>
-                      <i class="fa fa-phone" aria-hidden="true"></i>
-                      {{ contactInfo.phone }}
-                    </li>
-                    <li>
-                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                      {{ contactInfo.email }}
-                    </li>
-                  </ul>
+      <div class="footer-main-content">
+        <div class="container">
+          <div class="footer-main-content-elements">
+            <!-- Logo and Contact Info Column -->
+            <div class="footer-main-content-element">
+              <aside class="widget">
+                <div class="widget-title uni-uppercase">
+                  <a href="#" (click)="onLinkClick('logo', contactInfo)">
+                    <img [src]="contactInfo.logoPath" [alt]="contactInfo.logoAlt" class="img-responsive">
+                  </a>
                 </div>
-              </div>
-            </aside>
-          </div>
-
-          <!-- Quick Links Column -->
-          <div class="footer-main-content-element col-md-4 col-sm-6">
-            <aside class="widget">
-              <h3 class="widget-title uni-uppercase">quick links</h3>
-              <div class="widget-content">
-                <div class="uni-quick-link">
-                  <ul>
-                    <li *ngFor="let link of quickLinks; trackBy: trackByFn">
-                      <a href="#" [attr.href]="link.url" (click)="onLinkClick('quicklink', link)">
-                        <span>{{ link.icon }}</span> {{ link.text }}
-                      </a>
-                    </li>
-                  </ul>
+                <div class="widget-content">
+                  <p>{{ contactInfo.description }}</p>
+                  <div class="uni-info-contact">
+                    <ul>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        {{ contactInfo.address }}
+                      </li>
+                      <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        {{ contactInfo.phone }}
+                      </li>
+                      <li>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        {{ contactInfo.email }}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </aside>
-          </div>
+              </aside>
+            </div>
 
-          <!-- Latest Posts Column -->
-          <div class="footer-main-content-element col-md-4 col-sm-6">
-            <aside class="widget">
-              <h3 class="widget-title uni-uppercase">latest posts</h3>
-              <div class="widget-content">
-                <div class="uni-footer-latest-post">
-                  <ul>
-                    <li *ngFor="let post of latestPosts; trackBy: trackByFn">
-                      <h4>
-                        <a href="#" [attr.href]="post.url" (click)="onLinkClick('post', post)">
-                          {{ post.title }}
+            <!-- Quick Links Column -->
+            <div class="footer-main-content-element">
+              <aside class="widget">
+                <h3 class="widget-title uni-uppercase">{{quick_links}}</h3>
+                <div class="widget-content">
+                  <div class="uni-quick-link">
+                    <ul>
+                      <li *ngFor="let link of quickLinks; trackBy: trackByFn">
+                        <a href="#" [attr.href]="link.url" (click)="onLinkClick('quicklink', link)">
+                          <span>{{ link.icon }}</span> {{ link.text }}
                         </a>
-                      </h4>
-                      <span class="time">{{ post.date }}</span>
-                    </li>
-                  </ul>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+              </aside>
+            </div>
 
-  <!-- Copyright Area -->
-  <div class="copyright-area">
-    <div class="container">
-      <div class="copyright-content">
-        <div class="row">
-          <div class="col-sm-6">
-            <p class="copyright-text">
-              <a href="#" (click)="onLinkClick('copyright', copyright)">{{ copyright.text }}</a>
-            </p>
-          </div>
-          <div class="col-sm-6">
-            <ul class="copyright-menu">
-              <li *ngFor="let link of copyright.links; trackBy: trackByFn">
-                <a href="#" [attr.href]="link.url" (click)="onLinkClick('copyright-link', link)">
-                  {{ link.text }}
-                </a>
-              </li>
-            </ul>
+            <!-- Latest Posts Column -->
+            <div class="footer-main-content-element">
+              <aside class="widget">
+                <h3 class="widget-title uni-uppercase">{{latest_posts}}</h3>
+                <div class="widget-content">
+                  <div class="uni-footer-latest-post">
+                    <ul>
+                      <li *ngFor="let post of latestPosts; trackBy: trackByFn">
+                        <h4>
+                          <a href="#" [attr.href]="post.url" (click)="onLinkClick('post', post)">
+                            {{ post.title }}
+                          </a>
+                        </h4>
+                        <span class="time">{{ post.date }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
+
+      <!-- Copyright Area -->
+      <div class="copyright-area">
+        <button class="scroll-to-top" (click)="scrollToTop()" title="Scroll to top">
+          <i class="fa fa-arrow-up"></i>
+        </button>
+        <div class="container">
+          <div class="copyright-content">
+            <div class="row">
+             
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>

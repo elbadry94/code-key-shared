@@ -28,13 +28,7 @@ export interface FooterSocialLink {
   title: string;
 }
 
-export interface FooterCopyright {
-  text: string;
-  links: Array<{
-    text: string;
-    url: string;
-  }>;
-}
+
 
 @Component({
   selector: 'ck-medicine-footer',
@@ -44,58 +38,13 @@ export interface FooterCopyright {
   styleUrls: ['./medicine-footer.component.css']
 })
 export class MedicineFooterComponent {
-  @Input() contactInfo: FooterContactInfo = {
-    logoPath: 'images/logowhite.png',
-    logoAlt: 'Company Logo',
-    description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fame ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.',
-    address: "45 Queen's Park Rd, Brighton, UK",
-    phone: '(094) 123 4567 - (094) 123 4568',
-    email: 'medicareplus@domain.com'
-  };
+  @Input() contactInfo!: FooterContactInfo;
+  @Input() quickLinks!: FooterQuickLink[];
+  @Input() latestPosts!: FooterPost[];
+  @Input() showNewsletter!: boolean;
+  @Input() quick_links!: string|'quick links';
+  @Input() latest_posts!: string|'latest posts';
 
-  @Input() quickLinks: FooterQuickLink[] = [
-    { text: 'Home', url: '#', icon: '+' },
-    { text: 'About', url: '#', icon: '+' },
-    { text: 'Services', url: '#', icon: '+' },
-    { text: 'Timetable', url: '#', icon: '+' },
-    { text: 'Blog', url: '#', icon: '+' },
-    { text: 'Contact', url: '#', icon: '+' }
-  ];
-
-  @Input() latestPosts: FooterPost[] = [
-    {
-      title: 'Lorem ipsum dolor sit amet, consectetuer',
-      url: '#',
-      date: 'june 12, 2017'
-    },
-    {
-      title: 'Aliquam tincidunt mauris eu risus amet',
-      url: '#',
-      date: 'june 12, 2017'
-    },
-    {
-      title: 'Morbi in sem quis dui placerat ornare column',
-      url: '#',
-      date: 'june 12, 2017'
-    }
-  ];
-
-  @Input() copyright: FooterCopyright = {
-    text: 'Templateshub',
-    links: [
-      { text: 'Term Of Use', url: '#' },
-      { text: 'Privacy Policy', url: '#' }
-    ]
-  };
-
-  @Input() showNewsletter: boolean = false; // Set to false as requested
-  @Input() socialLinks: FooterSocialLink[] = [
-    { icon: 'fa fa-facebook', url: '#', title: 'Facebook' },
-    { icon: 'fa fa-twitter', url: '#', title: 'Twitter' },
-    { icon: 'fa fa-google-plus', url: '#', title: 'Google Plus' },
-    { icon: 'fa fa-youtube-play', url: '#', title: 'YouTube' },
-    { icon: 'fa fa-instagram', url: '#', title: 'Instagram' }
-  ];
 
   @Output() linkClick = new EventEmitter<{type: string, item: any}>();
   @Output() socialClick = new EventEmitter<FooterSocialLink>();
@@ -118,6 +67,13 @@ export class MedicineFooterComponent {
       this.newsletterSubmit.emit(this.newsletterEmail);
       this.newsletterEmail = '';
     }
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   trackByFn(index: number, item: any): any {
