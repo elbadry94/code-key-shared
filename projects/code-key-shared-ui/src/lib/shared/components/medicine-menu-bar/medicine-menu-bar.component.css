@@ -1,138 +1,213 @@
+
 /* ===============================
-   🎨 Medicine Menu Bar - Updated Color Scheme
+   🎨 Medicine Menu Bar - Enhanced Responsive Styles
    =============================== */
+
+
+/* Or include the base styles directly */
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Base color variables - ensure these are available */
 :root {
-  /* Primary Colors */
   --medicine-primary-red: #B71C1C;
   --medicine-primary-red-light: #C62828;
   --medicine-primary-brown: #5D4037;
   --medicine-primary-brown-light: #6D4C41;
   --medicine-primary-orange: #FF8F00;
   --medicine-primary-orange-light: #FFA000;
-
-  /* Secondary Colors */
   --medicine-white: #FFFFFF;
   --medicine-light-gray: #F5F5F5;
   --medicine-dark-gray: #424242;
-
-  /* Complementary Colors */
   --medicine-dark-blue: #1565C0;
   --medicine-medical-green: #388E3C;
   --medicine-light-beige: #FFF8E1;
-
-  /* Component Specific Colors */
-  --medicine-menu-bg: var(--medicine-white);
+  --medicine-menu-bg: var(--medicine-primary-red);
   --medicine-menu-text: var(--medicine-primary-brown);
   --medicine-menu-border: var(--medicine-light-gray);
-
   --medicine-menu-hover-bg: var(--medicine-light-beige);
   --medicine-menu-hover-text: var(--medicine-primary-brown);
-
   --medicine-menu-active-bg: var(--medicine-primary-red);
   --medicine-menu-active-text: var(--medicine-white);
   --medicine-menu-active-shadow: 0 2px 4px rgba(183, 28, 28, 0.3);
-
   --medicine-menu-dropdown-bg: var(--medicine-white);
   --medicine-menu-dropdown-text: var(--medicine-primary-brown);
   --medicine-menu-dropdown-hover-bg: var(--medicine-light-beige);
   --medicine-menu-dropdown-border: var(--medicine-light-gray);
-
   --medicine-menu-toggler-bg: var(--medicine-primary-red);
   --medicine-menu-toggler-border: var(--medicine-primary-red-light);
-
   --medicine-menu-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --medicine-menu-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ===============================
-   🧭 Medicine Menu Bar Container
-   =============================== */
+
 .medicine-menu-bar {
-  background: var(--medicine-menu-bg) !important;
+  background: var(--medicine-primary-red);
   box-shadow: var(--medicine-menu-shadow);
   position: relative;
   z-index: 1000;
-  direction: rtl;
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
-/* ===============================
-   📱 Mobile Menu Toggler
-   =============================== */
-.navbar-toggler {
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle-btn {
   background: var(--medicine-menu-toggler-bg);
   border: 1px solid var(--medicine-menu-toggler-border);
+  color: var(--medicine-white);
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  display: none; /* Hidden on desktop */
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1001;
+
+  &:hover {
+    background: var(--medicine-primary-red-light);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: 2px solid var(--medicine-primary-orange);
+    outline-offset: 2px;
+  }
+
+  &.active {
+    background: var(--medicine-primary-brown);
+    .menu-toggle-icon i {
+      transform: rotate(90deg);
+    }
+  }
+
+  .menu-toggle-icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      transition: transform 0.3s ease;
+    }
+  }
 }
 
-.navbar-toggler:hover {
-  background: var(--medicine-menu-hover-bg);
-  border-color: var(--medicine-menu-hover-text);
+/* Navigation */
+.menu-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  &.mobile {
+    &.collapsed {
+      display: none;
+    }
+
+    &.expanded {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--medicine-menu-bg);
+      box-shadow: var(--medicine-menu-shadow);
+      border-top: 1px solid var(--medicine-menu-border);
+      border-radius: 0 0 8px 8px;
+      padding: 1rem;
+      z-index: 1000;
+    }
+  }
 }
 
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(183, 28, 28, 0.25);
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
-/* ===============================
-   🗂️ Navigation Items
-   =============================== */
-.nav-item {
+.menu-item {
   position: relative;
+
+  &.has-dropdown {
+    .menu-link {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--medicine-primary-red);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover:after {
+        width: 80%;
+      }
+    }
+  }
+
+  &.dropdown-open {
+    .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
 }
 
-.nav-link {
-  color: var(--medicine-menu-text) !important;
+.menu-link {
+  color: #fff;
   font-weight: 500;
-  padding: 0.75rem 1rem !important;
+  padding: 0.75rem 1rem;
   transition: all 0.3s ease;
   position: relative;
-  border-radius: 0.375rem;
+  border-radius: 6px;
   margin: 0 0.25rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  background: transparent;
 }
-
-.nav-link:hover {
-  background: var(--medicine-menu-hover-bg) !important;
-  color: var(--medicine-menu-hover-text) !important;
-  transform: translateY(-1px);
-  box-shadow: var(--medicine-menu-shadow-hover);
+.menu-link:hover, .menu-link:focus {
+  background: var(--medicine-primary-red-light);
+  color: #fff;
 }
-
-.nav-link.active {
-  background: var(--medicine-menu-active-bg) !important;
-  color: var(--medicine-menu-active-text) !important;
+.menu-link.active {
+  background: var(--medicine-primary-red-light);
+  color: #fff;
   box-shadow: var(--medicine-menu-active-shadow);
 }
 
-.nav-link i {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.nav-link:hover i {
-  opacity: 1;
-}
-
-/* ===============================
-   📂 Dropdown Menus
-   =============================== */
+/* Dropdown Menus */
 .dropdown {
-  position: static;
-}
-
-.dropdown-toggle::after {
-  margin-right: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.dropdown-toggle[aria-expanded="true"]::after {
-  transform: rotate(180deg);
+  position: relative;
 }
 
 .dropdown-menu {
-  background: var(--medicine-menu-dropdown-bg);
+  background: var(--medicine-light-beige);
   border: 1px solid var(--medicine-menu-dropdown-border);
-  border-radius: 0.5rem;
+  border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 0;
   min-width: 200px;
@@ -144,12 +219,18 @@
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
-}
+  margin-top: 0.5rem;
+  list-style: none;
 
-.dropdown-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  li {
+    margin: 0;
+  }
 }
 
 .dropdown-item {
@@ -160,165 +241,298 @@
   display: flex;
   align-items: center;
   margin: 0 0.25rem;
-  border-radius: 0.25rem;
-}
-
-.dropdown-item:hover {
-  background: var(--medicine-menu-dropdown-hover-bg);
-  color: var(--medicine-menu-dropdown-text);
-  transform: translateX(-2px);
-}
-
-.dropdown-item.active {
-  background: var(--medicine-menu-active-bg);
-  color: var(--medicine-menu-active-text);
-}
-
-.dropdown-item i {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-inline-end: 0.5rem;
-}
-
-/* ===============================
-   🔍 Right Side Menu Items
-   =============================== */
-.navbar-nav .nav-item .nav-link {
+  border-radius: 4px;
+  text-decoration: none;
   font-size: 0.9rem;
-  padding: 0.5rem 0.75rem !important;
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--medicine-menu-dropdown-hover-bg);
+    color: var(--medicine-menu-dropdown-text);
+    transform: translateX(-2px);
+  }
+
+  &.active {
+    background: var(--medicine-menu-active-bg);
+    color: var(--medicine-menu-active-text);
+  }
+
+  &:focus {
+    outline: 2px solid var(--medicine-primary-red);
+    outline-offset: 2px;
+  }
+
+  .dropdown-icon {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-right: 0.5rem;
+    min-width: 14px;
+  }
 }
 
-.navbar-nav .nav-item .nav-link i {
-  font-size: 0.8rem;
-}
-
-/* ===============================
-   📱 Dropdown Overlay (Click Outside)
-   =============================== */
+/* Overlay */
 .dropdown-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.1);
   z-index: 999;
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+}
+.dropdown-menu.show {
+  pointer-events: auto;
 }
 
 /* ===============================
-   📱 Responsive Design
+   📱 Responsive Breakpoints
    =============================== */
+
+/* Large screens and below */
+@media (max-width: 1199.98px) {
+  .menu-container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Medium screens and below - Show mobile toggle */
 @media (max-width: 991.98px) {
-  .medicine-menu-bar {
-    padding: 0.5rem 0;
+  .menu-toggle-btn {
+    display: flex;
   }
 
-  .navbar-collapse {
-    background: var(--medicine-menu-bg);
-    border-top: 1px solid var(--medicine-menu-border);
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 0.5rem 0.5rem;
+  .menu-nav {
+    &.collapsed {
+      display: none;
+    }
+
+    &.expanded {
+      display: block;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 1rem;
+      right: 1rem;
+      background: var(--medicine-menu-bg);
+      border: 1px solid var(--medicine-menu-border);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: var(--medicine-menu-shadow);
+      z-index: 1000;
+    }
   }
 
-  .navbar-nav {
+  .menu-list {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: stretch;
+    justify-content: flex-start;
   }
 
-  .nav-link {
-    padding: 0.75rem 1rem !important;
-    margin: 0 !important;
-    border-radius: 0.375rem !important;
+  .menu-item {
+    width: 100%;
+  }
+
+  .menu-link {
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    text-align: left;
   }
 
   .dropdown-menu {
     position: static;
     transform: none;
-    box-shadow: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     border: none;
-    background: rgba(255, 255, 255, 0.1);
-    margin-top: 0.5rem;
-    border-radius: 0.375rem;
+    background: var(--medicine-light-beige);
+    margin: 0.5rem 0 0 0;
+    border-radius: 6px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0.5rem 0;
+
+    &.show {
+      display: block;
+    }
+
+    &:not(.show) {
+      display: none;
+    }
   }
 
   .dropdown-item {
-    color: var(--medicine-menu-text);
-    padding: 0.5rem 1.5rem;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--medicine-menu-text);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .navbar-nav .nav-item .nav-link {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem !important;
-  }
-
-  .nav-link {
-    text-align: right;
-  }
-
-  .dropdown-menu {
-    padding: 0.25rem 0;
-  }
-
-  .dropdown-item {
-    padding: 0.4rem 1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 
+/* Small tablets */
+@media (max-width: 767.98px) {
+  .menu-container {
+    padding: 0 1rem;
+  }
+
+  .menu-toggle-btn {
+    width: 42px;
+    height: 42px;
+
+    .menu-toggle-icon {
+      font-size: 16px;
+    }
+  }
+
+  .menu-nav.expanded {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .menu-link {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .dropdown-item {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile phones */
 @media (max-width: 575.98px) {
+  .menu-container {
+    padding: 0 0.75rem;
+  }
+
+  .menu-toggle-btn {
+    width: 38px;
+    height: 38px;
+
+    .menu-toggle-icon {
+      font-size: 15px;
+    }
+  }
+
   .medicine-menu-bar {
     padding: 0.25rem 0;
   }
 
-  .navbar-toggler {
-    padding: 0.375rem 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .navbar-collapse {
+  .menu-nav.expanded {
+    left: 0.25rem;
+    right: 0.25rem;
     padding: 0.75rem;
+    top: calc(100% + 0.25rem);
   }
 
-  .nav-link {
-    padding: 0.6rem 0.75rem !important;
-    font-size: 0.9rem;
+  .menu-link {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
   }
 
   .dropdown-item {
     padding: 0.4rem 0.75rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .menu-list {
+    gap: 0.25rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 374.98px) {
+  .menu-container {
+    padding: 0 0.5rem;
+  }
+
+  .menu-nav.expanded {
+    left: 0;
+    right: 0;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .menu-toggle-btn {
+    width: 35px;
+    height: 35px;
+
+    .menu-toggle-icon {
+      font-size: 14px;
+    }
   }
 }
 
 /* ===============================
-   ♿ Accessibility & Focus States
+   🎭 Animation Enhancements
    =============================== */
-.nav-link:focus {
-  outline: 2px solid var(--medicine-primary-red);
-  outline-offset: 2px;
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.dropdown-item:focus {
-  outline: 2px solid var(--medicine-primary-red);
-  outline-offset: 2px;
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.navbar-toggler:focus {
-  outline: 2px solid var(--medicine-primary-red);
-  outline-offset: 2px;
+.menu-nav.expanded {
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+.dropdown-menu.show {
+  animation: bounceIn 0.4s ease-out;
 }
 
 /* ===============================
-   🌙 Dark Theme Support (Optional)
+   ♿ Enhanced Accessibility
    =============================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .menu-link {
+    border: 1px solid var(--medicine-menu-text);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus {
+    border-color: var(--medicine-primary-red);
+  }
+}
+
+/* Dark theme support */
 @media (prefers-color-scheme: dark) {
   :root {
     --medicine-menu-bg: #1a1a1a;
@@ -329,53 +543,22 @@
     --medicine-menu-dropdown-text: #ffffff;
     --medicine-menu-dropdown-hover-bg: #404040;
     --medicine-menu-dropdown-border: #404040;
+    --medicine-light-beige: #2d2d2d;
   }
 }
 
-/* ===============================
-   🎭 Animation Effects
-   =============================== */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+/* Focus management for keyboard navigation */
+.menu-link:focus-visible,
+.dropdown-item:focus-visible,
+.menu-toggle-btn:focus-visible {
+  outline: 2px solid var(--medicine-primary-red);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+/* Print styles */
+@media print {
+  .medicine-menu-bar {
+    display: none;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.medicine-menu-bar {
-  animation: slideDown 0.4s ease-out;
-}
-
-.dropdown-menu {
-  animation: slideDown 0.3s ease-out;
-}
-
-/* ===============================
-   📐 RTL Support
-   =============================== */
-[dir="ltr"] .medicine-menu-bar {
-  direction: ltr;
-}
-
-[dir="ltr"] .navbar-nav {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-[dir="ltr"] .dropdown-menu {
-  right: auto;
-  left: 0;
-}
-
-[dir="ltr"] .nav-link {
-  text-align: left;
-}
-
-[dir="ltr"] .dropdown-toggle::after {
-  margin-left: 0.5rem;
-  margin-right: 0;
 }

@@ -5,21 +5,21 @@
          (mouseenter)="onMouseEnter()"
          (mouseleave)="onMouseLeave()">
 
-      <!-- Background Image -->
+      <!-- Background -->
       <div class="hero-background" [style.background-image]="'url(' + slide.imageUrl + ')'"></div>
 
-      <!-- Content Overlay -->
-      <div class="hero-content" [ngClass]="getPositionClass(slide.position)">
+      <!-- Content (always center + fixed animation) -->
+      <div class="hero-content caption-center animated fadeInUp">
         <div class="hero-caption">
           <h1 class="hero-title">{{ slide.title }}</h1>
           <p class="hero-subtitle">{{ slide.subtitle }}</p>
-          <a href="#" class="hero-button">{{ buttonText }}</a>
+          <a [routerLink]="buttonRoute" class="hero-button">{{ buttonText }}</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Navigation Controls (shown on hover) -->
+  <!-- Controls -->
   <div class="hero-controls" *ngIf="isHovered && slides.length > 1">
     <button class="control-btn prev-btn" (click)="prevSlide()" aria-label="Previous slide">
       <i class="fas fa-chevron-left"></i>
@@ -29,7 +29,7 @@
     </button>
   </div>
 
-  <!-- Slide Indicators -->
+  <!-- Indicators -->
   <div class="hero-indicators" *ngIf="slides.length > 1">
     <button *ngFor="let slide of slides; let i = index"
             class="indicator"

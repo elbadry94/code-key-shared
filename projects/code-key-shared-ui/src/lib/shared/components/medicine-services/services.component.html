@@ -1,52 +1,55 @@
 <div class="services-section" *ngIf="showTitle || services.length > 0">
-  <div class="container">
-    <!-- Section Title -->
-    <div class="section-title" *ngIf="showTitle">
-      <h3>{{ sectionTitle }}</h3>
-      <div class="title-underline"></div>
-    </div>
+  <!-- Section Title -->
+  <div class="section-title" *ngIf="showTitle">
+    <h2>{{ sectionTitle }}</h2>
+  </div>
 
-    <!-- Services Grid -->
-    <div class="services-grid">
-      <div class="row">
-        <div class="col-md-4 col-sm-6" *ngFor="let service of services; trackBy: trackByFn">
-          <div class="service-card" (click)="onServiceClick(service)">
-            <div class="card-header">
-              <div class="card-icon">
-                <img
-                  [src]="service.iconPath"
-                  [alt]="service.iconAlt"
-                  class="icon-image"
-                >
-              </div>
-              <div class="card-title-section">
-                <h4 class="card-title">{{ service.title }}</h4>
-              </div>
-            </div>
-            <div class="card-content">
-              <p class="card-description">{{ service.description }}</p>
-              <a
-                [href]="service.readMoreUrl"
-                class="readmore-link"
-                (click)="onReadMoreClick(service, $event)"
-              >
-                Read more
-              </a>
-            </div>
-          </div>
+  <!-- Services Grid -->
+  <div class="services-grid">
+    <div class="service-card" 
+         *ngFor="let service of services; trackBy: trackByFn" 
+         (click)="onServiceClick(service)">
+     
+      <!-- Card Header - Split Design (Icon Left + Title Right) -->
+      <div class="card-header-split">
+        <!-- Icon Section (Left Side) -->
+        <div class="card-icon-section">
+          <img
+            [src]="service.iconPath"
+            [alt]="service.iconAlt"
+            class="icon-image"
+          >
+        </div>
+        
+        <!-- Title Section (Right Side) -->
+        <div class="card-title-section">
+          <h4 class="card-title">{{ service.title }}</h4>
         </div>
       </div>
-    </div>
 
-    <!-- All Services Button -->
-    <div class="all-services-section" *ngIf="showAllServicesButton">
-      <a
-        [href]="allServicesUrl"
-        class="all-services-btn"
-        (click)="onAllServicesClick()"
-      >
-        {{ allServicesText }}
-      </a>
+      <!-- Card Content -->
+      <div class="card-content">
+        <p class="card-description">{{ service.description }}</p>
+        <a
+          [href]="service.readMoreUrl"
+          class="readmore-link"
+          (click)="onReadMoreClick(service, $event)"
+          *ngIf="service.readMoreUrl"
+        >
+          Read more
+        </a>
+      </div>
     </div>
+  </div>
+
+  <!-- All Services Button -->
+  <div class="all-services-section" *ngIf="showAllServicesButton">
+    <a
+      [href]="allServicesUrl"
+      class="all-services-btn"
+      (click)="onAllServicesClick()"
+    >
+      {{ allServicesText }}
+    </a>
   </div>
 </div>

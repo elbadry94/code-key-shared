@@ -20,13 +20,14 @@ export interface NewsItem {
   styleUrls: ['./medicine-news.component.css']
 })
 export class MedicineNewsComponent implements OnInit, OnDestroy {
-  @Input() newsItems: NewsItem[] = [];
-  @Input() sectionTitle: string = 'Featured News and Insights';
-  @Input() sectionSubtitle: string = 'Read the latest news about medicross as well as medical news around the world.';
-  @Input() showTitle: boolean = true;
-  @Input() itemsPerView: number = 3;
-  @Input() autoPlay: boolean = false;
-  @Input() autoPlayInterval: number = 5000;
+  @Input() newsItems!: NewsItem[];
+  @Input() sectionTitle!: string;
+  @Input() sectionSubtitle!: string;
+  @Input() showTitle!: boolean;
+  @Input() itemsPerView!: number;
+  @Input() autoPlay!: boolean;
+  @Input() autoPlayInterval!: number;
+  @Input() isRTL!: boolean;
 
   currentIndex = 0;
   private autoPlayTimer?: any;
@@ -43,7 +44,6 @@ export class MedicineNewsComponent implements OnInit, OnDestroy {
 
   get visibleItems(): NewsItem[] {
     if (this.newsItems.length === 0) return [];
-
     const endIndex = Math.min(this.currentIndex + this.itemsPerView, this.newsItems.length);
     return this.newsItems.slice(this.currentIndex, endIndex);
   }
@@ -68,18 +68,30 @@ export class MedicineNewsComponent implements OnInit, OnDestroy {
     }
   }
 
-  goToSlide(index: number) {
-    this.currentIndex = index;
+  goToPage(pageIndex: number) {
+    this.currentIndex = pageIndex * this.itemsPerView;
   }
 
-  onMouseEnter() {
-    this.stopAutoPlay();
+  getCurrentPageIndex(): number {
+    return Math.floor(this.currentIndex / this.itemsPerView);
   }
 
-  onMouseLeave() {
-    if (this.autoPlay) {
-      this.startAutoPlay();
+  getPaginationPages(): any[] {
+    const totalPages = Math.ceil(this.newsItems.length / this.itemsPerView);
+    return new Array(totalPages);
+  }
+
+  onCardClick(event: Event, readMoreUrl?: string) {
+    if (event.target && (event.target as HTMLElement).closest('.read-more')) {
+      return; // Let the read more link handle the click
     }
+    if (readMoreUrl && readMoreUrl !== '#') {
+      window.open(readMoreUrl, '_blank');
+    }
+  }
+
+  onReadMoreClick(event: Event) {
+    event.stopPropagation();
   }
 
   private startAutoPlay() {
@@ -104,7 +116,7 @@ export class MedicineNewsComponent implements OnInit, OnDestroy {
   getDateParts(dateString: string): { day: string; month: string } {
     const date = new Date(dateString);
     return {
-      day: date.getDate().toString(),
+      day: date.getDate().toString().padStart(2, '0'),
       month: date.toLocaleDateString('en-US', { month: 'short' })
     };
   }

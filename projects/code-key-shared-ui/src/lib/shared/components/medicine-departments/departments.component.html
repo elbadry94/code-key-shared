@@ -1,29 +1,22 @@
 <div class="departments-section" *ngIf="showTitle || departments.length > 0">
-  <div class="container">
-    <!-- Section Title -->
-    <div class="section-title" *ngIf="showTitle">
-      <h3>{{ sectionTitle }}</h3>
-      <div class="title-underline"></div>
-    </div>
+  <!-- Section Title -->
+  <div class="section-title" *ngIf="showTitle">
+    <h2>{{ sectionTitle }}</h2>
+  </div>
 
-    <!-- Departments Grid -->
-    <div class="departments-grid">
-      <div class="row">
-        <div class="col-md-4 col-sm-6" *ngFor="let department of departments; trackBy: trackByFn">
-          <div class="department-card" (click)="onDepartmentClick(department)">
-            <div class="card-icon">
-              <img
-                [src]="department.iconPath"
-                [alt]="department.iconAlt"
-                class="icon-image"
-              >
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">{{ department.title }}</h4>
-              <p class="card-description">{{ department.description }}</p>
-            </div>
-          </div>
-        </div>
+  <!-- Departments Grid -->
+  <div class="departments-grid">
+    <div class="department-card" *ngFor="let department of departments; trackBy: trackByFn" (click)="onDepartmentClick(department)">
+      <div class="card-icon">
+        <img
+          [src]="department.iconPath"
+          [alt]="department.iconAlt"
+          class="icon-image"
+        >
+      </div>
+      <div class="card-content">
+        <h4 class="card-title">{{ department.title }}</h4>
+        <p class="card-description">{{ department.description }}</p>
       </div>
     </div>
   </div>

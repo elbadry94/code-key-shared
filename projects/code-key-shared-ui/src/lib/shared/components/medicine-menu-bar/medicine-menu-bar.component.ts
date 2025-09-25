@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 export interface MenuTab {
   id?: string;
@@ -23,72 +23,32 @@ export interface MenuTab {
   styleUrls: ['./medicine-menu-bar.component.css']
 })
 export class MedicineMenuBarComponent {
-  @Input() menuTabs: MenuTab[] = [
-    {
-      id: '1',
-      title: 'Home',
-      target: '/home',
-      order: 1,
-      menuTypeId: 'main',
-      isActive: true
-    },
-    {
-      id: '2',
-      title: 'Pages',
-      target: '/pages',
-      order: 2,
-      menuTypeId: 'main',
-      childs: [
-        { title: 'About', target: '/about', order: 1, menuTypeId: 'sub' },
-        { title: 'Services', target: '/services', order: 2, menuTypeId: 'sub' },
-        { title: 'Contact', target: '/contact', order: 3, menuTypeId: 'sub' }
-      ]
-    },
-    {
-      id: '3',
-      title: 'Components',
-      target: '/components',
-      order: 3,
-      menuTypeId: 'main'
-    },
-    {
-      id: '4',
-      title: 'Utilities',
-      target: '/utilities',
-      order: 4,
-      menuTypeId: 'main',
-      childs: [
-        { title: 'Tools', target: '/tools', order: 1, menuTypeId: 'sub' },
-        { title: 'Helpers', target: '/helpers', order: 2, menuTypeId: 'sub' }
-      ]
-    },
-    {
-      id: '5',
-      title: 'Plugins',
-      target: '/plugins',
-      order: 5,
-      menuTypeId: 'main'
-    },
-    {
-      id: '6',
-      title: 'Documentation',
-      target: '/documentation',
-      order: 6,
-      menuTypeId: 'main',
-      childs: [
-        { title: 'API Docs', target: '/api-docs', order: 1, menuTypeId: 'sub' },
-        { title: 'Guides', target: '/guides', order: 2, menuTypeId: 'sub' },
-        { title: 'Examples', target: '/examples', order: 3, menuTypeId: 'sub' }
-      ]
-    }
-  ];
-
-  @Input() isCollapsed = false;
+  @Input() menuTabs!: MenuTab[];
+  @Input() isCollapsed!: boolean;
   @Output() tabSelected = new EventEmitter<MenuTab>();
+  isMobile = false;
+
+  ngOnInit() {
+    this.checkMobile();
+    window.addEventListener('resize', this.checkMobile.bind(this));
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.checkMobile.bind(this));
+  }
+
+  checkMobile() {
+    this.isMobile = window.innerWidth <= 991;
+    if (this.isMobile) {
+      this.isCollapsed = true;
+    } else {
+      this.isCollapsed = false;
+    }
+  }
 
   activeDropdown: string | null = null;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   onTabClick(tab: MenuTab, event?: Event): void {
     if (event) {

@@ -1,5 +1,6 @@
+// services.component.ts
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 export interface ServiceItem {
   id?: string;
@@ -15,65 +16,16 @@ export interface ServiceItem {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  styleUrls: ['./services.component.css'],
+  encapsulation: ViewEncapsulation.None // هذا مهم جداً!
 })
 export class ServicesComponent {
-  @Input() services: ServiceItem[] = [
-    {
-      id: '1',
-      title: 'Corneal transplant surgery',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon-5.png',
-      iconAlt: 'Corneal transplant surgery Icon',
-      readMoreUrl: '#'
-    },
-    {
-      id: '2',
-      title: 'Cardiothoracic Surgery',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon-4.png',
-      iconAlt: 'Cardiothoracic Surgery Icon',
-      readMoreUrl: '#'
-    },
-    {
-      id: '3',
-      title: 'General health check',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon-3.png',
-      iconAlt: 'General health check Icon',
-      readMoreUrl: '#'
-    },
-    {
-      id: '4',
-      title: 'Diagnosis & treatment of cancer',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon-2.png',
-      iconAlt: 'Cancer treatment Icon',
-      readMoreUrl: '#'
-    },
-    {
-      id: '5',
-      title: 'Treatment of pneumonia',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon-1.png',
-      iconAlt: 'Pneumonia treatment Icon',
-      readMoreUrl: '#'
-    },
-    {
-      id: '6',
-      title: 'Treatment of dermatitis',
-      description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...',
-      iconPath: 'images/icons_box/icon_4/icon.png',
-      iconAlt: 'Dermatitis treatment Icon',
-      readMoreUrl: '#'
-    }
-  ];
-
-  @Input() sectionTitle: string = 'Our Services';
-  @Input() showTitle: boolean = true;
-  @Input() showAllServicesButton: boolean = true;
-  @Input() allServicesUrl: string = '#';
-  @Input() allServicesText: string = 'All services +';
+  @Input() services!: ServiceItem[];
+  @Input() sectionTitle!: string;
+  @Input() showTitle!: boolean;
+  @Input() showAllServicesButton!: boolean;
+  @Input() allServicesUrl!: string;
+  @Input() allServicesText!: string;
 
   @Output() serviceClick = new EventEmitter<ServiceItem>();
   @Output() readMoreClick = new EventEmitter<ServiceItem>();

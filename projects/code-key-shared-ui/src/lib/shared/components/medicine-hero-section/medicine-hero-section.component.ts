@@ -1,26 +1,30 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+// medicine-hero-section.component.ts
+import { Component, Input, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-export interface HeroSlide {
+export interface HeroSlideDto {
   id: number;
   imageUrl: string;
   title: string;
   subtitle: string;
-  buttonText?: string;
-  position: 'left' | 'center' | 'right';
 }
 
 @Component({
   selector: 'ck-medicine-hero-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './medicine-hero-section.component.html',
-  styleUrls: ['./medicine-hero-section.component.css']
+  styleUrls: ['./medicine-hero-section.component.css'],
+  encapsulation: ViewEncapsulation.None // This allows global CSS variables to work
 })
 export class MedicineHeroSectionComponent implements OnInit, OnDestroy {
-  @Input() slides: HeroSlide[] = [];
-  @Input() buttonText: string = 'Our Services';
-  @Input() autoPlayInterval: number = 5000; // 5 seconds
+  @Input() slides!: HeroSlideDto[];
+  @Input() buttonText!: string;
+  @Input() buttonRoute!: string;
+  @Input() autoPlayInterval!: number;
+  @Input() showControls!: boolean;
+  @Input() showIndicators!: boolean;
 
   currentSlideIndex = 0;
   isHovered = false;
@@ -34,16 +38,8 @@ export class MedicineHeroSectionComponent implements OnInit, OnDestroy {
     this.stopAutoPlay();
   }
 
-  get currentSlide(): HeroSlide | null {
+  get currentSlide(): HeroSlideDto | null {
     return this.slides[this.currentSlideIndex] || null;
-  }
-
-  get slidePositions(): { [key: number]: string } {
-    return {
-      0: 'right',
-      1: 'left',
-      2: 'center'
-    };
   }
 
   nextSlide() {
@@ -89,13 +85,5 @@ export class MedicineHeroSectionComponent implements OnInit, OnDestroy {
       clearInterval(this.autoPlayTimer);
       this.autoPlayTimer = undefined;
     }
-  }
-
-  getPositionClass(position: string): string {
-    return `caption-${position}`;
-  }
-
-  getAnimationClass(): string {
-    return 'animated flipInX';
   }
 }

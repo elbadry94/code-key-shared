@@ -1,70 +1,39 @@
 <div class="medicine-logo-bar">
-  <div class="container-fluid">
-    <div class="row align-items-center py-3">
-      <!-- Logo Section -->
-      <div class="col-lg-3 col-md-4 col-12 text-center text-md-start mb-3 mb-md-0">
-        <div class="logo-container d-flex align-items-center justify-content-center justify-content-md-start">
-          <img
-            [src]="logoData.logoPath"
-            [alt]="logoData.logoAltText"
-            class="logo-img me-3"
-            (click)="openLocation()"
-            style="cursor: pointer;"
-          >
-          <h1 class="logo-title mb-0" *ngIf="logoData.title">
-            {{ logoData.title }}
-          </h1>
-        </div>
+  <div class="logo-bar-container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img
+        [src]="logoData.logoPath"
+        [alt]="logoData.logoAltText"
+        class="logo-image"
+        (click)="openLocation()"
+        style="cursor: pointer;"
+      >
+      <div class="logo-text">
+        <h1 class="logo-title">{{ logoData.title }}</h1>
+        <!-- <p class="logo-subtitle">Faculty of Medicine</p> -->
       </div>
+    </div>
 
-      <!-- Contact Information Section -->
-      <div class="col-lg-9 col-md-8 col-12">
-        <div class="contact-info d-flex flex-wrap justify-content-center justify-content-md-end gap-4">
-          <!-- Address -->
-          <div class="contact-item d-flex align-items-center" *ngIf="contactInfo.address">
-            <i class="fas fa-map-marker-alt contact-icon me-2"></i>
-            <div class="contact-text">
-              <span class="contact-label">Address</span>
-              <span class="contact-value" (click)="openLocation()" style="cursor: pointer;">
-                {{ contactInfo.address }}
-              </span>
-            </div>
-          </div>
+    <!-- Contact Information Section -->
+    <div class="contact-section">
+      <!-- Address -->
+      <a class="contact-item" *ngIf="contactInfo.address" (click)="openLocation()">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>{{ contactInfo.address }}</span>
+      </a>
 
-          <!-- Phone -->
-          <div class="contact-item d-flex align-items-center" *ngIf="contactInfo.phone">
-            <i class="fas fa-phone contact-icon me-2"></i>
-            <div class="contact-text">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value" (click)="openPhone(contactInfo.phone)" style="cursor: pointer;">
-                {{ contactInfo.phone }}
-              </span>
-            </div>
-          </div>
+      <!-- Phone -->
+      <a class="contact-item" *ngIf="contactInfo.phone" (click)="openPhone(contactInfo.phone)">
+        <i class="fas fa-phone"></i>
+        <span>{{ contactInfo.phone }}</span>
+      </a>
 
-          <!-- Appointment Phone -->
-          <div class="contact-item d-flex align-items-center" *ngIf="contactInfo.phoneAppointment">
-            <i class="fas fa-phone-volume contact-icon me-2"></i>
-            <div class="contact-text">
-              <span class="contact-label">Phone Appointment</span>
-              <span class="contact-value" (click)="openPhone(contactInfo.phoneAppointment)" style="cursor: pointer;">
-                {{ contactInfo.phoneAppointment }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="contact-item d-flex align-items-center" *ngIf="contactInfo.email">
-            <i class="fas fa-envelope contact-icon me-2"></i>
-            <div class="contact-text">
-              <span class="contact-label">Email</span>
-              <span class="contact-value" (click)="openEmail()" style="cursor: pointer;">
-                {{ contactInfo.email }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Email -->
+      <a class="contact-item" *ngIf="contactInfo.email" (click)="openEmail()">
+        <i class="fas fa-envelope"></i>
+        <span>{{ contactInfo.email }}</span>
+      </a>
     </div>
   </div>
 </div>
