@@ -10,7 +10,7 @@ import { PrimeDeleteDialogComponent } from '../p-delete-dialog/p-delete-dialog.c
 import { Toolbar } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 @Component({
-    selector: 'app-prime-data-table',
+    selector: 'app-p-datatable',
     imports: [TableModule, NgClass, RouterModule, PrimeDeleteDialogComponent, DatePipe, Toolbar, ButtonModule],
     templateUrl: './p-datatable.component.html',
     styleUrls: ['./p-datatable.component.css']
