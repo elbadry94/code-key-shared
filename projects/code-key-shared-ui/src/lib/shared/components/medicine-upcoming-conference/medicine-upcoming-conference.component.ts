@@ -12,6 +12,7 @@ export interface Conference {
   image: string;
 }
 
+
 @Component({
   selector: 'app-medicine-upcoming-conference',
   standalone: true,
