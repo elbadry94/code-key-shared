@@ -1,0 +1,144 @@
+
+
+
+/* اللوجو */
+.logo img {
+  height: 60px;
+}
+
+/* الشمال (بحث + لغة) */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box {
+display: flex;
+  align-items: start;
+  background: #fff;
+  border-radius: 21px;
+  padding: 0px 0px;
+  width: 150px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  color: #0d1b4c;
+}
+.first-menu{
+  direction: rtl;
+}
+.lang-btn {
+  background: #f0c93d;
+  border: none;
+  color: #0d1b4c;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+}
+
+.menu-bar{
+  background-color: rgb(209, 208, 208);
+  color: black;
+  direction: rtl;
+}
+
+.container{
+  justify-content: space-around;
+
+}
+.d-flex{
+  display: flex;
+}
+
+/* Bootstrap Navbar Styles */
+.navbar {
+  border: none;
+  padding: 1px 0rem;
+    /* color: #fff !important; */
+  direction: rtl;
+  font-size: medium;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-weight: 500;
+  font-size: 15px;
+  color: #fffcfc !important;
+}
+.second-link{
+  color:#0d1b4c !important;
+}
+.navbar .nav-link:hover {
+  background: transparent;
+  color: #f0c93d !important;
+}
+
+/* Search and Language for Bootstrap */
+.navbar .search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+padding: 0px 4px;
+  width: 113px;}
+
+.navbar .search-box .form-control {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.navbar .btn-warning {
+  background: #f0c93d;
+  border: none;
+  color: #0d1b4c;
+  padding: 0.3rem 0rem;
+  border-radius: 15px;
+  margin: inherit;
+    margin-right: inherit;
+  width: 68px;
+}
+
+.navbar .btn-outline-light {
+  background: transparent;
+  border: none;
+  color: #0d1b4c;
+}
+
+/* Logo */
+.navbar img {
+  height: 60px;
+}
+
+
+
+/* .img-fluid{
+  position: relative;
+  top: 2rem;
+  z-index: 9999;
+  left: 40rem;} */
+.logo{
+object-fit: cover;
+  position: absolute;
+  top: 0rem;
+  z-index: 9999;
+  left: 39rem;
+
+}
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .second-navbar{
+    color: #0d1b4c !important;
+  }
+

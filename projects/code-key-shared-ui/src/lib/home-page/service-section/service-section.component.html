@@ -1,0 +1,10 @@
+<div class="services-container">
+  <div class="service-card" *ngFor="let service of services">
+    <p-card>
+      <ng-template pTemplate="header">
+        <i [class]="service.icon" style="font-size:2rem; color:#0d6efd"></i>
+      </ng-template>
+      <h3>{{ service.title }}</h3>
+    </p-card>
+  </div>
+</div>
