@@ -55,6 +55,10 @@ export * from './lib/pages/settings/Departments/Components/activity-list/activit
 export * from './lib/pages/settings/Departments/Components/add-edit-activity/add-edit-activity.component';
 export * from './lib/pages/settings/Departments/Departments.routes';
 
+export * from './lib/pages/models/department-dto';
+
+export * from './lib/shared/services/settings/departments/departments.service';
+
 
 // export home page components
 export * from './lib/home-page/header/header.component';
