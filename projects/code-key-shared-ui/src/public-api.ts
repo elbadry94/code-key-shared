@@ -44,7 +44,6 @@ export * from './lib/pages/service/photo.service';
 // Export Shared Components
 export * from './lib/shared';
 
-
 // Department Components
 export * from './lib/pages/settings/Departments/Components/add-edit-department/add-edit-department.component';
 export * from './lib/pages/settings/Departments/Components/add-department-features/add-department-features.component';
@@ -56,7 +55,12 @@ export * from './lib/pages/settings/Departments/Components/activity-list/activit
 export * from './lib/pages/settings/Departments/Components/add-edit-activity/add-edit-activity.component';
 export * from './lib/pages/settings/Departments/Departments.routes';
 
-
 export * from './lib/pages/models/department-dto';
 
 export * from './lib/shared/services/settings/departments/departments.service';
+
+
+// export home page components
+export * from './lib/home-page/header/header.component';
+export * from './lib/home-page/service-section/service-section.component';
+export * from './lib/home-page/slider/slider.component';
