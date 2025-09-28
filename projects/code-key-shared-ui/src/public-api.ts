@@ -44,6 +44,17 @@ export * from './lib/pages/service/photo.service';
 // Export Shared Components
 export * from './lib/shared';
 
+// Department Components
+export * from './lib/pages/settings/Departments/Components/add-edit-department/add-edit-department.component';
+export * from './lib/pages/settings/Departments/Components/add-department-features/add-department-features.component';
+export * from './lib/pages/settings/Departments/Components/program-list/program-list.component';
+export * from './lib/pages/settings/Departments/Components/add-edit-program/add-edit-program.component';
+export * from './lib/pages/settings/Departments/Components/faculty-list/faculty-list.component';
+export * from './lib/pages/settings/Departments/Components/add-edit-faculty/add-edit-faculty.component';
+export * from './lib/pages/settings/Departments/Components/activity-list/activity-list.component';
+export * from './lib/pages/settings/Departments/Components/add-edit-activity/add-edit-activity.component';
+export * from './lib/pages/settings/Departments/Departments.routes';
+
 
 // export home page components
 export * from './lib/home-page/header/header.component';
