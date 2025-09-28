@@ -44,6 +44,7 @@ export * from './lib/pages/service/photo.service';
 // Export Shared Components
 export * from './lib/shared';
 
+
 // Department Components
 export * from './lib/pages/settings/Departments/Components/add-edit-department/add-edit-department.component';
 export * from './lib/pages/settings/Departments/Components/add-department-features/add-department-features.component';
@@ -64,3 +65,6 @@ export * from './lib/shared/services/settings/departments/departments.service';
 export * from './lib/home-page/header/header.component';
 export * from './lib/home-page/service-section/service-section.component';
 export * from './lib/home-page/slider/slider.component';
+
+// import styles
+import './lib/styles.css';
