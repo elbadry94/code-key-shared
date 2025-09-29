@@ -8,26 +8,27 @@ import { CarouselModule } from 'primeng/carousel';
   styleUrl: './slider.component.css',
 })
 export class SliderComponent {
-  @Input() slides: any[] = [
-    {
-      image: '/assets/slider2.png',
-      title: `من تراث حضارتنا, نصوغ عقولاً تبني المجد`,
-      title2:
-        'تسعى جامعة الأقصر إلى تقديم تعليم عالي الجودة، وتعزيز البحث العلمي، وخدمة المجتمع المحلي والدولي، مع الالتزام بالقيم الأخلاقية والحفاظ على التراث الثقافي والحضاري. نحن نؤمن بأهمية تطوير قدرات الطلاب وإعدادهم ليكونوا قادة المستقبل في مختلف المجالات.',
-    },
+@Input() slides: any[] = [
+  {
+    image: '/assets/slider2.png',
+    title: `From the heritage of our civilization, we shape minds that build glory`,
+    title2:
+      'Luxor University seeks to provide high-quality education, promote scientific research, and serve both the local and international community, while adhering to ethical values and preserving cultural and civilizational heritage. We believe in the importance of developing students’ abilities and preparing them to become future leaders in various fields.',
+  },
 
-    {
-      image: '/assets/slider3.jpg',
-      title: `من تراث حضارتنا, نصوغ عقولاً تبني المجد`,
-      title2:
-        'تسعى جامعة الأقصر إلى تقديم تعليم عالي الجودة، وتعزيز البحث العلمي، وخدمة المجتمع المحلي والدولي، مع الالتزام بالقيم الأخلاقية والحفاظ على التراث الثقافي والحضاري. نحن نؤمن بأهمية تطوير قدرات الطلاب وإعدادهم ليكونوا قادة المستقبل في مختلف المجالات.',
-    },
+  {
+    image: '/assets/slider3.jpg',
+    title: `From the heritage of our civilization, we shape minds that build glory`,
+    title2:
+      'Luxor University seeks to provide high-quality education, promote scientific research, and serve both the local and international community, while adhering to ethical values and preserving cultural and civilizational heritage. We believe in the importance of developing students’ abilities and preparing them to become future leaders in various fields.',
+  },
 
-    {
-      image: '/assets/slider4.jpg',
-      title: `من تراث حضارتنا, نصوغ عقولاً تبني المجد`,
-      title2:
-        'تسعى جامعة الأقصر إلى تقديم تعليم عالي الجودة، وتعزيز البحث العلمي، وخدمة المجتمع المحلي والدولي، مع الالتزام بالقيم الأخلاقية والحفاظ على التراث الثقافي والحضاري. نحن نؤمن بأهمية تطوير قدرات الطلاب وإعدادهم ليكونوا قادة المستقبل في مختلف المجالات.',
-    },
-  ];
+  {
+    image: '/assets/slider4.jpg',
+    title: `From the heritage of our civilization, we shape minds that build glory`,
+    title2:
+      'Luxor University seeks to provide high-quality education, promote scientific research, and serve both the local and international community, while adhering to ethical values and preserving cultural and civilizational heritage. We believe in the importance of developing students’ abilities and preparing them to become future leaders in various fields.',
+  },
+];
+
 }

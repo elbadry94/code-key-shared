@@ -9,40 +9,39 @@ import { NgFor } from "@angular/common";
 })
 export class EventsSectionComponent {
 
-  events = [
-    {
-      title: 'المهمات العلمية في مجال الذكاء',
-      description:
-        'ترأست الدكتورة مارجريت عبد الجليل، رئيس جامعة الأقصر الاجتماع الدوري للجنة المنشآت الجامعية اليوم الثلاثاء في إطار حرصها على المتابعات المستمرة...',
-      date: '21-6-2025',
-      time: '04:00 PM',
-      location: 'الأقصر، مصر'
-    },
-    {
-      title: 'المهمات العلمية في مجال الذكاء',
-      description:
-        'ترأست الدكتورة مارجريت عبد الجليل، رئيس جامعة الأقصر الاجتماع الدوري للجنة المنشآت الجامعية اليوم الثلاثاء في إطار حرصها على المتابعات المستمرة...',
-      date: '21-6-2025',
-      time: '04:00 PM',
-      location: 'الأقصر، مصر'
-    }
-    ,
-    {
-      title: 'المهمات العلمية في مجال الذكاء',
-      description:
-        'ترأست الدكتورة مارجريت عبد الجليل، رئيس جامعة الأقصر الاجتماع الدوري للجنة المنشآت الجامعية اليوم الثلاثاء في إطار حرصها على المتابعات المستمرة...',
-      date: '21-6-2025',
-      time: '04:00 PM',
-      location: 'الأقصر، مصر'
-    }
-    ,
-    {
-      title: 'المهمات العلمية في مجال الذكاء',
-      description:
-        'ترأست الدكتورة مارجريت عبد الجليل، رئيس جامعة الأقصر الاجتماع الدوري للجنة المنشآت الجامعية اليوم الثلاثاء في إطار حرصها على المتابعات المستمرة...',
-      date: '21-6-2025',
-      time: '04:00 PM',
-      location: 'الأقصر، مصر'
-    }
-  ];
+events = [
+  {
+    title: 'Scientific Missions in the Field of Artificial Intelligence',
+    description:
+      'Prof. Dr. Margaret Abdel Gelil, President of Luxor University, chaired the regular meeting of the University Facilities Committee today, Tuesday, as part of her keenness on continuous follow-up...',
+    date: '21-6-2025',
+    time: '04:00 PM',
+    location: 'Luxor, Egypt'
+  },
+  {
+    title: 'Scientific Missions in the Field of Artificial Intelligence',
+    description:
+      'Prof. Dr. Margaret Abdel Gelil, President of Luxor University, chaired the regular meeting of the University Facilities Committee today, Tuesday, as part of her keenness on continuous follow-up...',
+    date: '21-6-2025',
+    time: '04:00 PM',
+    location: 'Luxor, Egypt'
+  },
+  {
+    title: 'Scientific Missions in the Field of Artificial Intelligence',
+    description:
+      'Prof. Dr. Margaret Abdel Gelil, President of Luxor University, chaired the regular meeting of the University Facilities Committee today, Tuesday, as part of her keenness on continuous follow-up...',
+    date: '21-6-2025',
+    time: '04:00 PM',
+    location: 'Luxor, Egypt'
+  },
+  {
+    title: 'Scientific Missions in the Field of Artificial Intelligence',
+    description:
+      'Prof. Dr. Margaret Abdel Gelil, President of Luxor University, chaired the regular meeting of the University Facilities Committee today, Tuesday, as part of her keenness on continuous follow-up...',
+    date: '21-6-2025',
+    time: '04:00 PM',
+    location: 'Luxor, Egypt'
+  }
+];
+
 }

@@ -13,9 +13,10 @@ export class ServiceSectionComponent {
     @Input() presidentPath: string = '/assets/president.jpg';
 
  @Input() services: any[] = [
-    { title: 'خدمة الطلاب', icon: 'bi bi-person' },
-    { title: 'خدمة الدراسات العليا', icon: 'bi bi-mortarboard' },
-    { title: 'خدمة أعضاء هيئة التدريس', icon: 'bi bi-people' },
-    { title: 'خدمة ورقية', icon: 'bi bi-file-earmark-text' },
-  ];
+  { title: 'Student Services', icon: 'bi bi-person' },
+  { title: 'Postgraduate Services', icon: 'bi bi-mortarboard' },
+  { title: 'Faculty Services', icon: 'bi bi-people' },
+  { title: 'Paperwork Services', icon: 'bi bi-file-earmark-text' },
+];
+
 }
