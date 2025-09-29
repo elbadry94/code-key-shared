@@ -1,0 +1,32 @@
+<div class="vision-background ">
+  <div class=" mb-4  d-flex container " style="direction: rtl;">
+    <div class="w-75">
+       <h4 class="fw-bold">رؤية جامعة الأقصر</h4>
+    <p class="lead">
+      تسعى جامعة الأقصر أن تكون جامعة رائدة إقليميًا ومعترف بها عالميًا في التعليم العالي والبحث العلمي،
+      تساهم 
+      في بناء مجتمع المعرفة وتنمية الموارد البشرية المؤهلة القادرة على المنافسة محليًا وإقليميًا وعالميًا،
+      مع الحفاظ على التراث الثقافي والحضاري المصري العريق.
+    </p>
+    </div>
+   
+<div>
+      <button class="btn btn-color">
+      اقرأ المزيد <i class="bi bi-arrow-left"></i>
+    </button>
+  </div>
+
+ 
+</div>
+ <div class="row g-3 container m-auto">
+    <div *ngFor="let card of visionCards" [ngClass]="card.colClass">
+      <div class="vision-card p-3 h-100 rounded text-white" [ngStyle]="{'background-color': card.color}">
+                <p class="mb-0" style="direction: rtl;">{{ card.text }}</p>
+
+        <div class="icon mb-2">
+          <!-- <i [class]="card.icon + ' icon-color'"></i> -->
+                <img [src]="card.img" alt="Logo" class="img-fluid logo " >
+        </div>
+      </div>
+    </div>
+  </div>

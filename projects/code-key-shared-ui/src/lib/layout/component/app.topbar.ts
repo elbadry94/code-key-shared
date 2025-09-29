@@ -147,7 +147,7 @@ import { LayoutService } from '../service/layout.service';
                 </button>
                 <a class="brand-logo" routerLink="/">
                     <div class="logo-container">
-                        <img src="./assets/universitylogo.jpg" alt="Logo" class="logo-img" />
+                        <img src="/assets/universitylogo.jpg" alt="Logo" class="logo-img" />
                         <div class="logo-content">
                             <span class="logo-title">جامعة الأقصر</span>
                             <span class="logo-subtitle">نظام إدارة المعلومات</span>
@@ -196,7 +196,7 @@ import { LayoutService } from '../service/layout.service';
                     <!-- User Profile -->
                     <div class="user-profile">
                         <button class="user-btn" pStyleClass="@next" enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden" leaveActiveClass="animate-fadeout" [hideOnOutsideClick]="true">
-                            <img src="./assets/user.png" alt="User" class="user-avatar" />
+                            <img src="/assets/user.png" alt="User" class="user-avatar" />
                             <div class="user-info">
                                 <span class="user-role">مدير النظام</span>
                             </div>
@@ -207,7 +207,7 @@ import { LayoutService } from '../service/layout.service';
                         <div class="user-dropdown">
                             <div class="dropdown-header">
                                 <div class="user-profile-info">
-                                    <img src="/assets/img/logo.jpg" alt="User" class="profile-avatar" />
+                                    <img src="/assets/logo.jpg" alt="User" class="profile-avatar" />
                                     <div class="profile-details">
                                         <span class="profile-name">أحمد محمد</span>
                                         <span class="profile-email">ahmed@luxor.edu</span>

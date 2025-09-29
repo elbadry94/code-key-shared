@@ -21,7 +21,7 @@
   top: 0;
   width: 100%;
   padding: 0 2rem;
-  background-image: url(../img/Header.jpg);
+  background-image: url(/assets/Header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   transition: left 0.3s;
