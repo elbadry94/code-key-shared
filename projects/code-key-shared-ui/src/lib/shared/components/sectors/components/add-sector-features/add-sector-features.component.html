@@ -1,0 +1,44 @@
+<p-card class="p-2 m-0">
+    <div class="mb-3">
+        <label for="sectorSelect" class="form-label">اختر القطاع</label>
+        <p-select id="sectorSelect"
+                  [(ngModel)]="selectedSector"
+                  [options]="(sectors$ | async)!"
+                  optionLabel="name"
+                  optionValue="id"
+                  placeholder="اختر قطاعًا"
+                  class="w-full" />
+    </div>
+
+    @if (selectedSector) {
+        <p-tabs>
+            <p-tabpanel header="الخدمات">
+                <app-sector-services [sectorId]="selectedSector"></app-sector-services>
+            </p-tabpanel>
+            <p-tabpanel header="الإدارات">
+                <app-sector-departments [sectorId]="selectedSector"></app-sector-departments>
+            </p-tabpanel>
+            <p-tabpanel header="الأخبار">
+                <app-sector-news [sectorId]="selectedSector"></app-sector-news>
+            </p-tabpanel>
+            <p-tabpanel header="عن القطاع">
+                <app-sector-about [sectorId]="selectedSector"></app-sector-about>
+            </p-tabpanel>
+            <p-tabpanel header="الصورة">
+                <app-sector-image [sectorId]="selectedSector"></app-sector-image>
+            </p-tabpanel>
+            <p-tabpanel header="الإحصائيات">
+                <app-sector-statistics [sectorId]="selectedSector"></app-sector-statistics>
+            </p-tabpanel>
+            <p-tabpanel header="كلمة المدير">
+                <app-sector-manager-word [sectorId]="selectedSector"></app-sector-manager-word>
+            </p-tabpanel>
+            <p-tabpanel header="رسالة القطاع">
+                <app-sector-message [sectorId]="selectedSector"></app-sector-message>
+            </p-tabpanel>
+            <p-tabpanel header="رؤية القطاع">
+                <app-sector-vision [sectorId]="selectedSector"></app-sector-vision>
+            </p-tabpanel>
+        </p-tabs>
+    }
+</p-card>
