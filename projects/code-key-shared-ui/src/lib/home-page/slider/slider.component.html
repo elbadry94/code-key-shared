@@ -1,0 +1,16 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <ol class="carousel-indicators">
+    <li *ngFor="let slide of slides; let i = index" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+  </ol>
+  <div class="carousel-inner m-auto " >
+    <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
+      <img class="d-block  m-auto" [src]="slide.image" [alt]="slide.title">
+      <div class="carousel-caption">
+        <h2>{{ slide.title }}</h2>
+
+        <h6 style="padding-top: 5px;">{{slide.title2}}</h6>
+      </div>
+    </div>
+  </div>
+
+</div>

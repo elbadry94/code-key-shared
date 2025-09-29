@@ -1,0 +1,23 @@
+.slider-section {
+  background-color: #0a0e3f; /* الخلفية الغامقة */
+  width: 95%;
+  margin: auto;
+  margin-top: -2rem;
+  padding-top: 4rem;
+}
+
+.slider-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.slider-center {
+  max-width: 150px;
+  height: auto;
+  
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* تخلي الأسهم لونها فاتح */
+}

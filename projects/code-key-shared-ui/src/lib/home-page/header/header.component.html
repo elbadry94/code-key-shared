@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg row" style="background-color: #0d1b4c;">
+   <div class="container-fluid col-8 ">
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        @for (item of items; track $index) {
+        <li class="nav-item d-flex">
+          <a class="nav-link text-white" href="#">{{ item.label }}</a>
+          <i [class]="item.icon + ' item-icon'"></i>}
+      </ul>
+    </div>
+  </div>
+  <div class="d-none d-lg-block navbar-brand  col-2 ">
+    <img [src]="logoPath" alt="Logo" class="img-fluid logo " [style.width]="logoWidth" [style.height]="logoHeight">
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg second-navbar row" [class.scrolled]="isScrolled" style="background-color: #e0e0ff;">
+  <div class=" col-10">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        @for (item of items2; track $index) {
+        <li class="nav-item">
+          <a class="nav-link second-link text-white" style="color: #0d1b4c !important;" href="#">{{ item.label }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+
+
+
+  </div>
+</nav>

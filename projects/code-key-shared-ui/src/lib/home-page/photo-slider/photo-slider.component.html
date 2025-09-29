@@ -1,0 +1,26 @@
+<div class="container-fluid py-5 slider-section">
+  <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner text-center">
+  <h4 class="text-end mb-4 title">الصور</h4>
+
+      <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="d-flex justify-content-around gap-5 flex-wrap">
+          <ng-container *ngFor="let photo of slide">
+            <img [src]="photo.src"
+                 [alt]="photo.alt"
+                 [ngClass]="photo.center ? 'slider-center' : 'slider-photo'">
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev "  type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="color:aliceblue"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
