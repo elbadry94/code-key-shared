@@ -4,10 +4,11 @@
   </ol>
   <div class="carousel-inner m-auto " >
     <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
-      <img class="d-block w-75 m-auto" [src]="slide.image" [alt]="slide.title">
+      <img class="d-block  m-auto" [src]="slide.image" [alt]="slide.title">
       <div class="carousel-caption">
-        <h5>{{ slide.title }}</h5>
-        <h6>{{slide.title2}}</h6>
+        <h2>{{ slide.title }}</h2>
+
+        <h6 style="padding-top: 5px;">{{slide.title2}}</h6>
       </div>
     </div>
   </div>

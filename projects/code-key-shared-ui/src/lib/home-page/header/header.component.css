@@ -61,15 +61,16 @@ display: flex;
 /* Bootstrap Navbar Styles */
 .navbar {
   border: none;
-  padding: 1px 0rem;
+  padding: 9px 0rem 0;
     /* color: #fff !important; */
   direction: rtl;
-  font-size: medium;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 .navbar .navbar-nav .nav-link {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 18px;
   color: #fffcfc !important;
 }
 .second-link{
@@ -78,6 +79,7 @@ display: flex;
 .navbar .nav-link:hover {
   background: transparent;
   color: #f0c93d !important;
+  text-decoration: underline;
 }
 
 /* Search and Language for Bootstrap */
@@ -125,12 +127,10 @@ padding: 0px 4px;
   z-index: 9999;
   left: 40rem;} */
 .logo{
-object-fit: cover;
-  position: absolute;
-  top: 0rem;
+ position: absolute;
+  top: 5px;
   z-index: 9999;
-  left: 39rem;
-
+  left: 3rem;
 }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
@@ -138,7 +138,22 @@ object-fit: cover;
     justify-content: space-between;
   }
 
-  .second-navbar{
+.second-navbar{
     color: #0d1b4c !important;
   }
 
+.second-navbar.scrolled {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    /* width: 100%; */
+  }
+  .item-icon{
+    color: #fff !important;
+  font-size: 20px;
+  }
+.col-8{
+    flex: 1 0 auto;
+}

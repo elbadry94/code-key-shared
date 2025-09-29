@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -11,9 +11,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  @Input() logoPath: string = 'assets/logo2.png';
+  @Input() logoPath: string = '/assets/logo2.png';
   @Input() logoWidth: string = 'auto';
-  @Input() logoHeight: string = '134px';
+  @Input() logoHeight: string = '122px';
+
+  isScrolled = false;
 
   // items: MenuItem[] | undefined;
 
@@ -22,18 +24,23 @@ export class HeaderComponent {
     { label: 'خدمة الدراسات العليا',},
     { label: 'خدمة ورقية  ' },
     { label: 'خدمة اعضاء هيئة التدريس' },
-    { label: 'بحث', icon: 'pi pi-home' },
-    { label: 'English', icon: '' },
+    { label: 'بحث', icon: 'bi bi-search' },
+    { label: 'English', icon: 'bi bi-translate' },
   ];
   items2 = [
         {label: 'الرئيسية '},
     { label: 'عن الجامعة  ',},
     { label: 'الاخبار' },
     { label: 'الكليات و البرامج   ' },
-    { label: 'حياة طلابية', icon: 'pi pi-home' },
-    { label: 'القطاعات', icon: '' },
+    { label: 'حياة طلابية'},
+    { label: 'القطاعات' },
         { label: 'الراعية الصحية' },
     { label: 'تواصل معنا ' },
 
   ];
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
 }
