@@ -3,10 +3,9 @@
 
     <div class="carousel-inner text-center">
 
-      <!-- سلايد واحد (تقدري تزودي Slides حسب الحاجة) -->
-      <div class="carousel-item active">
-        <div class="d-flex justify-content-around  gap-5 flex-wrap">
-          <ng-container *ngFor="let logo of logos">
+      <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="d-flex justify-content-around gap-5 flex-wrap">
+          <ng-container *ngFor="let logo of slide">
             <img [src]="logo.src"
                  [alt]="logo.alt"
                  [ngClass]="logo.center ? 'slider-center' : 'slider-logo'">
@@ -16,7 +15,6 @@
 
     </div>
 
-    <!-- أزرار التنقل -->
     <button class="carousel-control-prev "  type="button" data-bs-target="#logoCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" style="color:aliceblue"></span>
     </button>

@@ -10,7 +10,7 @@ import { CommonModule, NgForOf } from '@angular/common';
   styleUrl: './service-section.component.css'
 })
 export class ServiceSectionComponent {
-    @Input() presidentPath: string = 'assets/president.jpg';
+    @Input() presidentPath: string = '/assets/president.jpg';
 
  @Input() services: any[] = [
     { title: 'خدمة الطلاب', icon: 'bi bi-person' },

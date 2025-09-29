@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  @Input() logoPath: string = 'assets/logo2.png';
+  @Input() logoPath: string = '/assets/logo2.png';
   @Input() logoWidth: string = 'auto';
   @Input() logoHeight: string = '122px';
 

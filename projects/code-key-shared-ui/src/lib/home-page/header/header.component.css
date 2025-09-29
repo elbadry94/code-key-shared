@@ -61,10 +61,11 @@ display: flex;
 /* Bootstrap Navbar Styles */
 .navbar {
   border: none;
-  padding: 9px 0rem;
+  padding: 9px 0rem 0;
     /* color: #fff !important; */
   direction: rtl;
   font-size: 20px;
+  margin-bottom: 0;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -129,7 +130,7 @@ padding: 0px 4px;
  position: absolute;
   top: 5px;
   z-index: 9999;
-  left: 3rem; 
+  left: 3rem;
 }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;

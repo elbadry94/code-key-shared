@@ -10,7 +10,7 @@
 }
 
 .container2 {
-  background: url(/assets/background2.png) repeat;
+  background: url('/assets/img/background2.png') repeat;
   background-size: contain;
   border-radius: 2px;
   padding: 2rem;

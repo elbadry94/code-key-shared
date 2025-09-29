@@ -21,6 +21,7 @@
 
 .carousel {
   height: 379px;
+  margin-top: 0;
 }
 
 .carousel-item img {
@@ -48,7 +49,7 @@ height: 140%;
 }
 
 .carousel-indicators{
-  bottom: -150px;}
+  bottom: -133px;}
 
 img{
   width: 95%;

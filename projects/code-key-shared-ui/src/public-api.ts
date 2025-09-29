@@ -72,6 +72,7 @@ export * from './lib/home-page/events-section/events-section.component';
 export * from './lib/home-page/logo-slider/logo-slider.component';
 export * from './lib/home-page/statistics-section/statistics-section.component';
 export * from './lib/home-page/contact-us/contact-us.component';
+export * from './lib/home-page/photo-slider/photo-slider.component'
 export * from './lib/home-page/footer/footer.component';
 
 // import styles

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
- @Input() logoPath: string = 'assets/logo2.png';
+ @Input() logoPath: string = '/assets/logo2.png';
   @Input() logoWidth: string = 'auto';
   @Input() logoHeight: string = '155px';
 }

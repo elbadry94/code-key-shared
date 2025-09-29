@@ -13,12 +13,13 @@ import { LogoSliderComponent } from '../../../code-key-shared-ui/src/lib/home-pa
 import { StatisticsSectionComponent } from '../../../code-key-shared-ui/src/lib/home-page/statistics-section/statistics-section.component';
 import { ContactUsComponent } from '../../../code-key-shared-ui/src/lib/home-page/contact-us/contact-us.component';
 import { FooterComponent } from '../../../code-key-shared-ui/src/lib/home-page/footer/footer.component';
+import { PhotoSliderComponent } from '../../../code-key-shared-ui/src/lib/home-page/photo-slider/photo-slider.component';
 @Component({
 
   selector: 'app-root',
   imports: [RouterOutlet,HeaderComponent,SliderComponent,ServiceSectionComponent,VisionComponent,NewsComponent
     ,SectorsSectionComponent,EventsSectionComponent,LogoSliderComponent,StatisticsSectionComponent,
-ContactUsComponent,FooterComponent
+ContactUsComponent,FooterComponent,PhotoSliderComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

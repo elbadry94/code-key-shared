@@ -9,7 +9,7 @@
   border-radius: 2px;
 }
 .background-img{
-  background: url(/assets/background2.png) repeat;
+  background: url(/assets/img/background2.png) repeat;
   background-size: contain;
   border-radius: 2px;
   padding: 4rem 2rem 2rem;
@@ -29,6 +29,27 @@
   padding: 20px;
   transition: transform 0.3s ease;
   height: 150px;
+}
+
+/* .row > .col-12:nth-child(4) .sector-card {
+  height: 100px;
+}
+
+.row > .col-12:nth-child(3) .sector-card {
+  height: 130px;
+}
+
+.row > .col-12:nth-child(2) .sector-card {
+  height: 150px;
+}
+
+.row > .col-12:nth-child(1) .sector-card {
+  height: 180px;
+} */
+
+.row {
+  position: relative;
+  z-index: 2;
 }
 
 /* الكارت الكبير */
