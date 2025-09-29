@@ -66,5 +66,3 @@ export * from './lib/home-page/header/header.component';
 export * from './lib/home-page/service-section/service-section.component';
 export * from './lib/home-page/slider/slider.component';
 
-// import styles
-import './lib/styles.css';
