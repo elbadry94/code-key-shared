@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  direction: rtl;
+}
+
+h5 {
+  color: #555;
+  font-weight: bold;
+}
+
+.bg-light {
+  background-color:#c0bfce !important;
+}
+
+.p-3 {
+  transition: transform 0.3s ease-in-out;
+}
+
+.p-3:hover {
+  transform: translateY(-5px);
+  background-color: #c0bfce;
+}
+
+
+
+i {
+  color: #3a3a8f;
+
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #c0bfce;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+   */
+   position: relative;
+   top:-3rem;
+
+  margin: 0 auto;
+}
+.container2{
+  background-color: #f2f0fb;
+  width: 95%;
+  margin: auto;
+  margin-top: -2rem;
+  padding-top: 4rem;
+  
+}

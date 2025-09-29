@@ -65,6 +65,14 @@ export * from './lib/shared/services/settings/departments/departments.service';
 export * from './lib/home-page/header/header.component';
 export * from './lib/home-page/service-section/service-section.component';
 export * from './lib/home-page/slider/slider.component';
+export * from './lib/home-page/vision/vision.component';
+export * from './lib/home-page/news/news.component';
+export * from './lib/home-page/sectors-section/sectors-section.component';
+export * from './lib/home-page/events-section/events-section.component';
+export * from './lib/home-page/logo-slider/logo-slider.component';
+export * from './lib/home-page/statistics-section/statistics-section.component';
+export * from './lib/home-page/contact-us/contact-us.component';
+export * from './lib/home-page/footer/footer.component';
 
 // import styles
 import './lib/styles.css';

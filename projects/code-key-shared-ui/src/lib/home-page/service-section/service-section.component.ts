@@ -1,17 +1,21 @@
+import { Input } from '@angular/core';
 import { Component } from '@angular/core';
-import { CardModule } from 'primeng/card';
+// import { NgForOf } from "@angular/common";
+import { CommonModule, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'lib-service-section',
-  imports: [CardModule],
+  imports: [CommonModule, NgForOf],
   templateUrl: './service-section.component.html',
   styleUrl: './service-section.component.css'
 })
 export class ServiceSectionComponent {
-  services = [
-    { icon: 'pi pi-user', title: 'خدمة الطالب' },
-    { icon: 'pi pi-graduation-cap', title: 'خدمة الدراسات العليا' },
-    { icon: 'pi pi-users', title: 'خدمة أعضاء هيئة التدريس' },
-    { icon: 'pi pi-file', title: 'خدمة ورقية' }
+    @Input() presidentPath: string = 'assets/president.jpg';
+
+ @Input() services: any[] = [
+    { title: 'خدمة الطلاب', icon: 'bi bi-person' },
+    { title: 'خدمة الدراسات العليا', icon: 'bi bi-mortarboard' },
+    { title: 'خدمة أعضاء هيئة التدريس', icon: 'bi bi-people' },
+    { title: 'خدمة ورقية', icon: 'bi bi-file-earmark-text' },
   ];
 }

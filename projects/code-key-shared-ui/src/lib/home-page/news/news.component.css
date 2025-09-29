@@ -1,0 +1,34 @@
+.news-img {
+  height: 250px;
+  background-color: #e8e8f8 !important;
+}
+
+.news-img-small {
+  height: 150px;
+  background-color: #e8e8f8 !important;
+}
+
+.card-body h6 {
+  color: #1b1b6d;
+}
+
+.carousel-indicators button {
+  background-color: #1b1b6d;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.container{
+  background-color:rgb(230, 222, 222) ;
+  direction: rtl;
+  color: #1b1b6d;
+}
+.carousel-indicators{
+bottom:-50px;
+}
+
+.btn:hover{
+    background-color:rgb(189, 181, 181) !important ;
+  color: #1b1b6d !important;
+
+}

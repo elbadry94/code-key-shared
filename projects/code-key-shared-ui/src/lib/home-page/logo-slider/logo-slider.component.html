@@ -1,0 +1,27 @@
+<div class="container-fluid py-5 slider-section">
+  <div id="logoCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner text-center">
+
+      <!-- سلايد واحد (تقدري تزودي Slides حسب الحاجة) -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-around  gap-5 flex-wrap">
+          <ng-container *ngFor="let logo of logos">
+            <img [src]="logo.src"
+                 [alt]="logo.alt"
+                 [ngClass]="logo.center ? 'slider-center' : 'slider-logo'">
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- أزرار التنقل -->
+    <button class="carousel-control-prev "  type="button" data-bs-target="#logoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="color:aliceblue"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#logoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
