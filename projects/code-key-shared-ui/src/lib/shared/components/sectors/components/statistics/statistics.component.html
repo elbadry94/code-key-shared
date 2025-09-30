@@ -1,0 +1,18 @@
+<div class="page-wrapper d-flex flex-column h-100 card">
+  <app-p-title-toolbar [pageTitle]="'إحصائيات القطاع'"></app-p-title-toolbar>
+  <div class="dataBox">
+    <div class="d-flex justify-content-end mb-3">
+      <button class="px-3 py-2 main-btn font-14 main border-radius-2" type="button" pButton pRipple (click)="openAdd()">
+        <div class="d-flex align-items-center">
+          <i class="bx bx-plus m-inline-end-1 font-18"></i>
+          <span class="p-inline-end-1">إضافة إحصائية جديدة</span>
+        </div>
+      </button>
+    </div>
+    @if (tableOptions) {
+      <div>
+        <app-p-datatable (event)="handleEvent($event)" [tableOptions]="tableOptions" [data]="data" [totalCount]="totalCount" [pageSize]="dataTableService.opt.pageSize"></app-p-datatable>
+      </div>
+    }
+  </div>
+</div>

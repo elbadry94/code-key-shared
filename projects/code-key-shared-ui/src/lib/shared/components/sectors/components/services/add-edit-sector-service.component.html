@@ -1,0 +1,30 @@
+
+<div class="p-fluid">
+  <div class="row">
+    <div class="col-lg-6 mb-3">
+      <label for="name" class="form-label">اسم الخدمة</label>
+      <input pInputText id="name" [(ngModel)]="service.name" class="w-100" />
+    </div>
+    <div class="col-lg-6 mb-3">
+      <label for="description" class="form-label">الوصف</label>
+      <textarea pInputTextarea id="description" [(ngModel)]="service.description" rows="3" class="w-100"></textarea>
+    </div>
+    <div class="col-lg-6 mb-3">
+      <label for="steps" class="form-label">الخطوات</label>
+      <p-chips id="steps" [(ngModel)]="service.steps" placeholder="أضف خطوة" class="w-100"></p-chips>
+    </div>
+    <div class="col-lg-6 mb-3">
+      <label for="requiredDocuments" class="form-label">الوثائق المطلوبة</label>
+      <p-chips id="requiredDocuments" [(ngModel)]="service.requiredDocuments" placeholder="أضف وثيقة" class="w-100"></p-chips>
+    </div>
+    <div class="col-lg-12 mb-3">
+      <label for="downloadableForms" class="form-label">نماذج التحميل</label>
+      <input pInputText id="downloadableForms" [(ngModel)]="service.downloadableForms" class="w-100" placeholder="رابط أو اسم النموذج" />
+    </div>
+  </div>
+</div>
+
+<div class="mt-3 d-flex justify-content-end">
+  <p-button label="إلغاء" icon="pi pi-times" severity="secondary" (onClick)="onCancel()" class="me-2"></p-button>
+  <p-button label="حفظ" icon="pi pi-check" (onClick)="onSave()"></p-button>
+</div>

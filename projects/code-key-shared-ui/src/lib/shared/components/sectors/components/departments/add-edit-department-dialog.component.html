@@ -1,0 +1,16 @@
+<div class="p-fluid">
+  <div class="row">
+    <div class="col-lg-6 mb-3">
+      <label for="name" class="form-label">اسم الإدارة</label>
+      <input pInputText id="name" [(ngModel)]="department.name" class="w-100" />
+    </div>
+    <div class="col-lg-6 mb-3">
+      <label for="manager" class="form-label">المدير</label>
+      <input pInputText id="manager" [(ngModel)]="department.manager" class="w-100" />
+    </div>
+  </div>
+</div>
+<div class="mt-3 d-flex justify-content-end">
+  <p-button label="إلغاء" icon="pi pi-times" severity="secondary" (onClick)="onCancel()" class="me-2"></p-button>
+  <p-button label="حفظ" icon="pi pi-check" (onClick)="onSave()"></p-button>
+</div>

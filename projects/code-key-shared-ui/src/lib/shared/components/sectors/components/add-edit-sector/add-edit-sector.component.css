@@ -1,0 +1,16 @@
+:host ::ng-deep {
+  .field {
+    margin-bottom: 1rem;
+  }
+  .col-fixed {
+    text-align: right;
+    padding-right: 1rem;
+    font-weight: bold;
+  }
+  .p-fluid .p-field {
+    margin-bottom: 1.5rem;
+  }
+  .flex.justify-content-end {
+    gap: 1rem;
+  }
+}

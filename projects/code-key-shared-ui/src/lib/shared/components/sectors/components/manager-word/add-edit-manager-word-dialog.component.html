@@ -1,0 +1,14 @@
+<div class="p-fluid">
+  <div class="mb-3">
+    <label for="managerWord" class="form-label">كلمة المدير</label>
+    <textarea id="managerWord" [(ngModel)]="managerWord.managerWord" class="w-100"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">التاريخ</label>
+    <input id="date" [(ngModel)]="managerWord.date" class="w-100" type="date" />
+  </div>
+</div>
+<div class="mt-3 d-flex justify-content-end">
+  <p-button label="إلغاء" icon="pi pi-times" severity="secondary" (onClick)="onCancel()" class="me-2"></p-button>
+  <p-button label="حفظ" icon="pi pi-check" (onClick)="onSave()"></p-button>
+</div>
