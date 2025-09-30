@@ -127,6 +127,14 @@ padding: 0px 4px;
   z-index: 9999;
   right: 3rem;
 }
+.logo.scrolled {
+    position: fixed;
+   top: 5px;
+  z-index: 9999;
+  right: 3rem;
+transition: all;  
+height: 70px !important;  
+}
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
     width: 100%;
@@ -149,12 +157,20 @@ padding: 0px 4px;
     color: #fff !important;
   font-size: 20px;
   }
+
+  .item-icon2{
+   color:#0d1b4c !important;
+  font-size: 22px;
+  }
 .col-8{
     flex: 1 0 auto;
 }
+.navbar .nav-link {
+  transition: background-color 0.1s ease, color 0.1s ease, border-radius 0.1s ease;
+}
+
 .navbar .nav-link:hover {
-background: #c9c0c030;
-  color: #f0c93d !important;
-  /* text-decoration:wavy; */
+background: #c9c0c052;
   border-radius: 2rem ;
+  transform: translateY(-2px);
 }

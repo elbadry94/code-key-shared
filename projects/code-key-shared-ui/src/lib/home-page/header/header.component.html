@@ -8,7 +8,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-3">
         @for (item of items; track $index) {
         <li class="nav-item d-flex">
           <a class="nav-link text-white" href="#">{{ item.label }}</a>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="d-none d-lg-block navbar-brand  col-2 ">
-    <img [src]="logoPath" alt="Logo" class="img-fluid logo " [style.width]="logoWidth" [style.height]="logoHeight">
+    <img [src]="logoPath" alt="Logo" [class.scrolled]="isScrolled" class="img-fluid logo " [style.width]="logoWidth" [style.height]="logoHeight">
   </div>
 </nav>
 
@@ -29,11 +29,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-3">
         @for (item of items2; track $index) {
-        <li class="nav-item">
+        <li class="nav-item d-flex">
           <a class="nav-link second-link text-white"  style="color: #0d1b4c !important;" [href]="item.routerLink ">{{ item.label }}</a>
-        </li>
+          <i [class]="item.icon + ' item-icon2'"></i>
+      </li>
         }
       </ul>
     </div>

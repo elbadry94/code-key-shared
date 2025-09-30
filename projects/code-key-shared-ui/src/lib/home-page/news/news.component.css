@@ -31,3 +31,13 @@ bottom:-50px;
   color: #1b1b6d !important;
 
 }
+
+/* Added hover effect for news cards */
+.card {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}
