@@ -1,18 +1,19 @@
 <div class="vision-background ">
-  <div class=" mb-4  d-flex container " style="direction: rtl;">
+  <div class=" mb-4  d-flex container ">
     <div class="w-75">
-       <h4 class="fw-bold">رؤية جامعة الأقصر</h4>
-    <p class="lead">
-      تسعى جامعة الأقصر أن تكون جامعة رائدة إقليميًا ومعترف بها عالميًا في التعليم العالي والبحث العلمي،
-      تساهم 
-      في بناء مجتمع المعرفة وتنمية الموارد البشرية المؤهلة القادرة على المنافسة محليًا وإقليميًا وعالميًا،
-      مع الحفاظ على التراث الثقافي والحضاري المصري العريق.
-    </p>
+   <h4 class="fw-bold">Vision of Luxor University</h4>
+<p class="lead">
+  Luxor University aspires to be a regionally leading and globally recognized institution in higher education and
+  scientific research, contributing to the building of a knowledge-based society and the development of qualified
+  human resources capable of competing locally, regionally, and globally, while preserving Egypt’s rich cultural
+  and civilizational heritage.
+</p>
+
     </div>
    
 <div>
       <button class="btn btn-color">
-      اقرأ المزيد <i class="bi bi-arrow-left"></i>
+      Read More  <i class="bi bi-arrow-right"></i>
     </button>
   </div>
 
@@ -21,7 +22,7 @@
  <div class="row g-3 container m-auto">
     <div *ngFor="let card of visionCards" [ngClass]="card.colClass">
       <div class="vision-card p-3 h-100 rounded text-white" [ngStyle]="{'background-color': card.color}">
-                <p class="mb-0" style="direction: rtl;">{{ card.text }}</p>
+                <p class="mb-0" >{{ card.text }}</p>
 
         <div class="icon mb-2">
           <!-- <i [class]="card.icon + ' icon-color'"></i> -->

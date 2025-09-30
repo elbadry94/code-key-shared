@@ -1,14 +1,15 @@
-import { Component, Input, OnInit, HostListener } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-// import { MenuItem } from 'primeng/api';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'lib-header',
-  imports: [MenubarModule, ButtonModule, InputTextModule, FormsModule],
+  imports: [MenubarModule, ButtonModule, InputTextModule, FormsModule, RouterLink, RouterOutlet],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   @Input() logoPath: string = '/assets/logo2.png';
@@ -17,26 +18,24 @@ export class HeaderComponent {
 
   isScrolled = false;
 
-  // items: MenuItem[] | undefined;
-
   items = [
-    {label: 'خدمة الطلاب'},
-    { label: 'خدمة الدراسات العليا',},
-    { label: 'خدمة ورقية  ' },
-    { label: 'خدمة اعضاء هيئة التدريس' },
-    { label: 'بحث', icon: 'bi bi-search' },
-    { label: 'English', icon: 'bi bi-translate' },
+    { label: 'Student Service ' },
+    { label: 'Postgraduate Service' },
+    { label: 'Paper service ' },
+    { label: 'Faculty Service' },
+    { label: 'Search', icon: 'bi bi-search' },
+    { label: ' اللغة العربية', icon: 'bi bi-translate' },
   ];
-  items2 = [
-        {label: 'الرئيسية '},
-    { label: 'عن الجامعة  ',},
-    { label: 'الاخبار' },
-    { label: 'الكليات و البرامج   ' },
-    { label: 'حياة طلابية'},
-    { label: 'القطاعات' },
-        { label: 'الراعية الصحية' },
-    { label: 'تواصل معنا ' },
 
+  items2 = [
+    { label: 'Home', routerLink: '#' },
+    { label: 'About the University', routerLink: '#about' },
+    { label: 'News', routerLink: '#news' },
+    { label: 'Faculties & Programs', routerLink: '#' },
+    { label: 'Student Life', routerLink: '#student-life' },
+    { label: 'Sectors', routerLink: '#sectors' },
+    { label: 'Healthcare', routerLink: '#' },
+    { label: 'Contact-Us', routerLink: '#contact-us' }
   ];
 
   @HostListener('window:scroll', [])

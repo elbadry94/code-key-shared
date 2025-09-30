@@ -33,7 +33,7 @@ display: flex;
   color: #0d1b4c;
 }
 .first-menu{
-  direction: rtl;
+  direction: ltr;
 }
 .lang-btn {
   background: #f0c93d;
@@ -47,7 +47,7 @@ display: flex;
 .menu-bar{
   background-color: rgb(209, 208, 208);
   color: black;
-  direction: rtl;
+  direction: ltr;
 }
 
 .container{
@@ -63,7 +63,7 @@ display: flex;
   border: none;
   padding: 9px 0rem 0;
     /* color: #fff !important; */
-  direction: rtl;
+  direction: ltr;
   font-size: 20px;
   margin-bottom: 0;
 }
@@ -75,11 +75,6 @@ display: flex;
 }
 .second-link{
   color:#0d1b4c !important;
-}
-.navbar .nav-link:hover {
-  background: transparent;
-  color: #f0c93d !important;
-  text-decoration: underline;
 }
 
 /* Search and Language for Bootstrap */
@@ -130,7 +125,7 @@ padding: 0px 4px;
  position: absolute;
   top: 5px;
   z-index: 9999;
-  left: 3rem;
+  right: 3rem;
 }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
@@ -156,4 +151,10 @@ padding: 0px 4px;
   }
 .col-8{
     flex: 1 0 auto;
+}
+.navbar .nav-link:hover {
+background: #c9c0c030;
+  color: #f0c93d !important;
+  /* text-decoration:wavy; */
+  border-radius: 2rem ;
 }

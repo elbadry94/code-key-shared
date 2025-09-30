@@ -8,11 +8,11 @@ import { NgClass, NgForOf } from "@angular/common";
   styleUrl: './statistics-section.component.css'
 })
 export class StatisticsSectionComponent {
-  stats = [
-    { number: 1201, label: 'طالب وافد', icon: 'bi bi-globe' },
-    { number: 2090, label: 'طالب دراسات عليا', icon: 'bi bi-mortarboard' },
-    { number: 32090, label: 'طالب جامعي', icon: 'bi bi-mortarboard-fill' },
-    { number: 1090, label: 'عضو هيئة تدريس', icon: 'bi bi-person-badge' },
-    { number: 11, label: 'موظف', icon: 'bi bi-building' },
-  ];
+stats = [
+  { number: 1201, label: 'International Students', icon: 'bi bi-globe' },
+  { number: 2090, label: 'Postgraduate Students', icon: 'bi bi-mortarboard' },
+  { number: 32090, label: 'Undergraduate Students', icon: 'bi bi-mortarboard-fill' },
+  { number: 1090, label: 'Faculty Members', icon: 'bi bi-person-badge' },
+  { number: 11, label: 'Staff', icon: 'bi bi-building' },
+];
 }

@@ -8,35 +8,33 @@ import { NgStyle, NgClass, NgFor } from "@angular/common";
   styleUrl: './vision.component.css'
 })
 export class VisionComponent {
-  visionCards = [
+visionCards = [
+  {
+    text: 'Contributing to the sustainable development of the local and regional community by developing solutions to societal problems and strengthening partnerships with the private sector.',
+    color: '#e5b77d',
+    img: '/assets/Vector.png',
+    colClass: 'col-md-6'   // 🟢 Half width
+  },
+  {
+    text: 'Achieving excellence in academic programs and curricula through curriculum development and updating academic programs.',
+    color: '#5b68b0',
+    img: '/assets/BookOpen.png',
+    // icon: 'bi bi-book',
+    colClass: 'col-md-6'   // 🟢 Half width
+  },
+  {
+    text: 'Enhancing the level of scientific research and innovation at the university by supporting distinguished research projects and promoting international research collaboration.',
+    color: '#5db6b0',
+    img: '/assets/Vector (1).png',
+    colClass: 'col-md-4'   // 🟢 One-third width
+  },
+  {
+    text: 'Preparing academically and professionally qualified graduates capable of competing in the local, regional, and global labor markets, while developing both practical and theoretical skills.',
+    color: '#d87d83',
+    img: '/assets/Student.png',
+    colClass: 'col-md-8'   // 🟢 Two-thirds width
+  }
+];
 
-    {
-      text: 'المساهمة في التنمية المستدامة للمجتمع المحلي والإقليمي من خلال تطوير حلول للمشاكل المجتمعية وتعزيز الشراكة مع القطاع الخاص.',
-      color: '#e5b77d',
-      img: '/assets/Vector.png',
-
-      colClass: 'col-md-6'   // 🟢 نص العرض
-    },
-      {
-      text: 'تحقيق التميز في البرامج الأكاديمية والمناهج الدراسية من تطوير المناهج الدراسية وتحديث البرامج الأكاديمية.',
-      color: '#5b68b0',
-      img: '/assets/BookOpen.png',
-
-      // icon: 'bi bi-book',
-      colClass: 'col-md-6'   // 🟢 نص العرض
-    },
-    {
-      text: 'الارتقاء بمستوى البحث العلمي والابتكار في الجامعة من خلال دعم المشاريع البحثية المتميزة وتعزيز التعاون البحثي الدولي.',
-      color: '#5db6b0',
-      img: '/assets/Vector (1).png',
-      colClass: 'col-md-4'   // 🟢 ثلث العرض
-    },
-    {
-      text: 'إعداد خريجين مؤهلين علمياً ومهنياً قادرين على المنافسة في سوق العمل المحلي والإقليمي والعالمي، مع تطوير المهارات العملية والنظرية.',
-      color: '#d87d83',
-      img: '/assets/Student.png',
-      colClass: 'col-md-8'   // 🟢 ثلثين العرض
-    }
-  ];
 
 }
