@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { NgForOf } from "@angular/common";
 
 @Component({
-  selector: 'lib-faculties-programs',
+  selector: 'lib-faculties-programs-ar',
   imports: [NgForOf],
-  templateUrl: './faculties-programs.component.html',
-  styleUrl: './faculties-programs.component.css'
+  templateUrl: './faculties-programs-ar.component.html',
+  styleUrl: './faculties-programs-ar.component.css'
 })
-export class FacultiesProgramsComponent {
+export class FacultiesProgramsComponentAr {
   faculties = [
     {
       name: 'كلية السياحة والفنادق',

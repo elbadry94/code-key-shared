@@ -4,12 +4,13 @@ import { Component } from '@angular/core';
 import { CommonModule, NgForOf } from '@angular/common';
 
 @Component({
-  selector: 'lib-service-section',
+  selector: 'lib-service-section-ar',
+  standalone: true,
   imports: [CommonModule, NgForOf],
-  templateUrl: './service-section.component.html',
-  styleUrl: './service-section.component.css'
+  templateUrl: './service-section-ar.component.html',
+  styleUrl: './service-section-ar.component.css'
 })
-export class ServiceSectionComponent {
+export class ServiceSectionComponentAr {
     @Input() presidentPath: string = '/assets/president.jpg';
 
 @Input() services: any[] = [

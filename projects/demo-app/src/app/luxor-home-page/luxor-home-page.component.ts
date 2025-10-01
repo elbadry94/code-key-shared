@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { SliderComponent } from '../../../../code-key-shared-ui/src/home-page-ar/slider/slider.component';
-import { ServiceSectionComponent } from '../../../../code-key-shared-ui/src/home-page-ar/service-section/service-section.component';
-import { VisionComponent } from '../../../../code-key-shared-ui/src/home-page-ar/vision/vision.component';
-import { NewsComponent } from '../../../../code-key-shared-ui/src/home-page-ar/news/news.component';
-import { SectorsSectionComponent } from '../../../../code-key-shared-ui/src/home-page-ar/sectors-section/sectors-section.component';
-import { EventsSectionComponent } from '../../../../code-key-shared-ui/src/home-page-ar/events-section/events-section.component';
+import { SliderComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/slider-ar/slider-ar.component';
+import { ServiceSectionComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/service-section-ar/service-section-ar.component';
+import { VisionComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/vision-ar/vision-ar.component';
+import { NewsComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/news-ar/news-ar.component';
+import { SectorsSectionComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/sectors-section-ar/sectors-section-ar.component';
+import { EventsSectionComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/events-section-ar/events-section-ar.component';
 import { LogoSliderComponent } from '../../../../code-key-shared-ui/src/home-page-ar/logo-slider/logo-slider.component';
-import { StatisticsSectionComponent } from '../../../../code-key-shared-ui/src/home-page-ar/statistics-section/statistics-section.component';
-import { ContactUsComponent } from '../../../../code-key-shared-ui/src/home-page-ar/contact-us/contact-us.component';
-import { PhotoSliderComponent } from '../../../../code-key-shared-ui/src/home-page-ar/photo-slider/photo-slider.component';
-import { AboutComponent } from '../../../../code-key-shared-ui/src/home-page-ar/pages/about/about.component';
-import { FacultiesProgramsComponent } from '../../../../code-key-shared-ui/src/home-page-ar/pages/faculties-programs/faculties-programs.component';
+import { StatisticsSectionComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/statistics-section-ar/statistics-section-ar.component';
+import { ContactUsComponent } from '../../../../code-key-shared-ui/src/home-page-ar/contact-us-ar/contact-us-ar.component';
+import { PhotoSliderComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/photo-slider-ar/photo-slider-ar.component';
+import { AboutComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/pages/about-ar/about-ar.component';
+import { FacultiesProgramsComponentAr } from '../../../../code-key-shared-ui/src/home-page-ar/pages/faculties-programs-ar/faculties-programs-ar.component';
 
 @Component({
   selector: 'app-luxor-home-page',
-  imports: [SliderComponent,ServiceSectionComponent,VisionComponent,NewsComponent
-    ,SectorsSectionComponent,EventsSectionComponent,LogoSliderComponent,StatisticsSectionComponent,
-ContactUsComponent,PhotoSliderComponent,AboutComponent,FacultiesProgramsComponent],
+  imports: [SliderComponentAr,ServiceSectionComponentAr,VisionComponentAr,NewsComponentAr
+    ,SectorsSectionComponentAr,EventsSectionComponentAr,LogoSliderComponent,StatisticsSectionComponentAr,
+ContactUsComponent,PhotoSliderComponentAr,AboutComponentAr,FacultiesProgramsComponentAr],
   templateUrl: './luxor-home-page.component.html',
   styleUrl: './luxor-home-page.component.scss'
 })
 export class LuxorHomePageComponent {
- 
+
 }

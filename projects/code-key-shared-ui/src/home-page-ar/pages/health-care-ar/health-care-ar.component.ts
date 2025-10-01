@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { NgForOf } from "@angular/common";
 
 @Component({
-  selector: 'lib-health-care',
+  selector: 'lib-health-care-ar',
   imports: [NgForOf],
-  templateUrl: './health-care.component.html',
-  styleUrl: './health-care.component.css'
+  templateUrl: './health-care-ar.component.html',
+  styleUrl: './health-care-ar.component.css'
 })
-export class HealthCareComponent {
+export class HealthCareComponentAr {
  healthServices = [
     {
       title: 'الخدمات الطبية الأساسية',

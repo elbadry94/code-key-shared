@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { SlicePipe, NgFor } from "@angular/common";
 
 @Component({
-  selector: 'lib-news',
+  selector: 'lib-news-ar',
   imports: [SlicePipe, NgFor],
-  templateUrl: './news.component.html',
-  styleUrl: './news.component.css'
+  templateUrl: './news-ar.component.html',
+  styleUrl: './news-ar.component.css'
 })
-export class NewsComponent {
+export class NewsComponentAr {
 newsList = [
   {
     title: 'نحو دمج فعّال في مدارسنا – جامعة الأقصر تنظم لقاءً توعويًا لتمكين ذوي الهمم',

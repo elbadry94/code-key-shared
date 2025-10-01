@@ -62,22 +62,22 @@ export * from './lib/shared/services/settings/departments/departments.service';
 
 
 // export home page components
-export * from './home-page-ar/header/header.component';
-export * from './home-page-ar/service-section/service-section.component';
-export * from './home-page-ar/slider/slider.component';
-export * from './home-page-ar/vision/vision.component';
-export * from './home-page-ar/news/news.component';
-export * from './home-page-ar/sectors-section/sectors-section.component';
-export * from './home-page-ar/events-section/events-section.component';
+export * from './home-page-ar/header-ar/header-ar.component';
+export * from './home-page-ar/service-section-ar/service-section-ar.component';
+export * from './home-page-ar/slider-ar/slider-ar.component';
+export * from './home-page-ar/vision-ar/vision-ar.component';
+export * from './home-page-ar/news-ar/news-ar.component';
+export * from './home-page-ar/sectors-section-ar/sectors-section-ar.component';
+export * from './home-page-ar/events-section-ar/events-section-ar.component';
 export * from './home-page-ar/logo-slider/logo-slider.component';
-export * from './home-page-ar/statistics-section/statistics-section.component';
-export * from './home-page-ar/contact-us/contact-us.component';
-export * from './home-page-ar/photo-slider/photo-slider.component'
-export * from './home-page-ar/footer/footer.component';
-export * from './home-page-ar/pages/about/about.component';
-export * from './home-page-ar/pages/faculties-programs/faculties-programs.component';
-export * from './home-page-ar/pages/student-life/student-life.component';
-export * from './home-page-ar/pages/health-care/health-care.component';
+export * from './home-page-ar/statistics-section-ar/statistics-section-ar.component';
+export * from './home-page-ar/contact-us-ar/contact-us-ar.component';
+export * from './home-page-ar/photo-slider-ar/photo-slider-ar.component'
+export * from './home-page-ar/footer-ar/footer-ar.component';
+export * from './home-page-ar/pages/about-ar/about-ar.component';
+export * from './home-page-ar/pages/faculties-programs-ar/faculties-programs-ar.component';
+export * from './home-page-ar/pages/student-life-ar/student-life-ar.component';
+export * from './home-page-ar/pages/health-care-ar/health-care-ar.component';
 
 
 

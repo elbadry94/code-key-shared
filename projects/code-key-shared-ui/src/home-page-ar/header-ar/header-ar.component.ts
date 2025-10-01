@@ -6,12 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'lib-header',
+  selector: 'lib-header-ar',
   imports: [MenubarModule, ButtonModule, InputTextModule, FormsModule, RouterLink, RouterOutlet],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  templateUrl: './header-ar.component.html',
+  styleUrls: ['./header-ar.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponentAr {
   @Input() logoPath: string = '/assets/logo2.png';
   @Input() logoWidth: string = 'auto';
   @Input() logoHeight: string = '122px';

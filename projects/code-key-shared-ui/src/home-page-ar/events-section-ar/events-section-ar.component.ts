@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NgFor } from "@angular/common";
 
 @Component({
-  selector: 'lib-events-section',
+  selector: 'lib-events-section-ar',
+  standalone: true,
   imports: [NgFor],
-  templateUrl: './events-section.component.html',
-  styleUrl: './events-section.component.css'
+  templateUrl: './events-section-ar.component.html',
+  styleUrl: './events-section-ar.component.css'
 })
-export class EventsSectionComponent {
+export class EventsSectionComponentAr {
 
 events = [
   {

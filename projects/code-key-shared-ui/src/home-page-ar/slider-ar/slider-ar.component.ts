@@ -2,12 +2,13 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 @Component({
-  selector: 'lib-slider',
+  selector: 'lib-slider-ar',
+  standalone: true,
   imports: [CommonModule, CarouselModule],
-  templateUrl: './slider.component.html',
-  styleUrl: './slider.component.css',
+  templateUrl: './slider-ar.component.html',
+  styleUrl: './slider-ar.component.css',
 })
-export class SliderComponent {
+export class SliderComponentAr {
 @Input() slides: any[] = [
   {
     image: '/assets/slider2.png',

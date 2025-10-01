@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NgClass, NgForOf } from "@angular/common";
 
 @Component({
-  selector: 'lib-statistics-section',
+  selector: 'lib-statistics-section-ar',
+  standalone: true,
   imports: [NgClass, NgForOf],
-  templateUrl: './statistics-section.component.html',
-  styleUrl: './statistics-section.component.css'
+  templateUrl: './statistics-section-ar.component.html',
+  styleUrl: './statistics-section-ar.component.css'
 })
-export class StatisticsSectionComponent implements OnInit {
+export class StatisticsSectionComponentAr implements OnInit {
 stats = [
   { number: 1201, label: 'الطلاب الوافدين', icon: 'bi bi-globe', currentNumber: 0 },
   { number: 2090, label: 'طلاب الدراسات العليا', icon: 'bi bi-mortarboard', currentNumber: 0 },

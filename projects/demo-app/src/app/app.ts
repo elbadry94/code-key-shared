@@ -3,13 +3,13 @@ import { AppLayout } from './../../../code-key-shared-ui/src/lib/layout/componen
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LuxorHomePageComponent } from './luxor-home-page/luxor-home-page.component';
-import { HeaderComponent } from '../../../code-key-shared-ui/src/home-page-ar/header/header.component';
-import { FooterComponent } from '../../../code-key-shared-ui/src/home-page-ar/footer/footer.component';
+import { HeaderComponentAr } from '../../../code-key-shared-ui/src/home-page-ar/header-ar/header-ar.component';
+import { FooterComponentAr } from '../../../code-key-shared-ui/src/home-page-ar/footer-ar/footer-ar.component';
 
 @Component({
 
   selector: 'app-root',
-  imports: [RouterOutlet, LuxorHomePageComponent, HeaderComponent,FooterComponent
+  imports: [RouterOutlet, LuxorHomePageComponent, HeaderComponentAr,FooterComponentAr
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -19,5 +19,5 @@ export class App {
  scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
- 
+
 }

@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NgStyle, NgClass, NgFor } from "@angular/common";
 
 @Component({
-  selector: 'lib-vision',
+  selector: 'lib-vision-ar',
+  standalone: true,
   imports: [NgStyle, NgClass, NgFor],
-  templateUrl: './vision.component.html',
-  styleUrl: './vision.component.css'
+  templateUrl: './vision-ar.component.html',
+  styleUrl: './vision-ar.component.css'
 })
-export class VisionComponent {
+export class VisionComponentAr {
 visionCards = [
   {
     text: 'المساهمة في التنمية المستدامة للمجتمع المحلي والإقليمي من خلال تطوير حلول للمشاكل المجتمعية وتعزيز الشراكة مع القطاع الخاص.',
