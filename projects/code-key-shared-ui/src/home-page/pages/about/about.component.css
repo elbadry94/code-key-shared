@@ -1,0 +1,20 @@
+/* .about-page h2,
+.about-page h4,
+.about-page h5 {
+  font-family: 'Cairo', sans-serif;
+} */
+
+.about-page p {
+  line-height: 1.8;
+}
+.container2{
+  background-color: #e8e8f8 !important;
+  direction: rtl;
+  padding: 5rem;
+  font-size: 20px;
+  width: 95% !important;
+  margin: auto;
+}
+.fw-bold{
+  color: #1b1b6d;
+}

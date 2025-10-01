@@ -45,3 +45,9 @@
 p {
   line-height: 1.8;
 }
+
+.btn:hover{
+    background-color:rgb(189, 181, 181) !important ;
+  color: #1b1b6d !important;
+
+}

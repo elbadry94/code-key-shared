@@ -1,0 +1,25 @@
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.btn:hover{
+  background-color: #1b1b6d;
+  color: #e8e8f8;
+}
+.container2{
+  background-color: #e8e8f8 !important;
+  direction: rtl;
+  padding: 5rem;
+  font-size: 20px;
+  width: 95% !important;
+  margin: auto;
+}
+.fw-bold{
+  color: #1b1b6d;
+}
+
+

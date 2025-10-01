@@ -3,10 +3,12 @@ import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterOutlet } from "@angular/router";
+
 // import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'lib-header',
-  imports: [MenubarModule, ButtonModule, InputTextModule, FormsModule],
+  imports: [MenubarModule, ButtonModule, InputTextModule, FormsModule, RouterLink, RouterOutlet],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -28,14 +30,14 @@ export class HeaderComponent {
     { label: 'English', icon: 'bi bi-translate' },
   ];
   items2 = [
-        {label: 'الرئيسية '},
-    { label: 'عن الجامعة  ',},
-    { label: 'الاخبار' },
-    { label: 'الكليات و البرامج   ' },
-    { label: 'حياة طلابية'},
-    { label: 'القطاعات' },
-        { label: 'الراعية الصحية' },
-    { label: 'تواصل معنا ' },
+        {label: 'الرئيسية ', routerLink: '#'},
+    { label: 'عن الجامعة  ', routerLink: '#about'},
+    { label: 'الاخبار', routerLink: '#news' },
+    { label: 'الكليات و البرامج   ', routerLink: '#' },
+    { label: 'حياة طلابية', routerLink: '#students-life'},
+    { label: 'القطاعات', routerLink: '#sectors' },
+        { label: 'الراعية الصحية', routerLink: '#' },
+    { label: 'تواصل معنا ', routerLink: '#contact-us',icon:"bi bi-telephone" },
 
   ];
 

@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg row" style="background-color: #0d1b4c;">
    <div class="container-fluid col-8 ">
 
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,7 +16,7 @@
     </div>
   </div>
   <div class="d-none d-lg-block navbar-brand  col-2 ">
-    <img [src]="logoPath" alt="Logo" class="img-fluid logo " [style.width]="logoWidth" [style.height]="logoHeight">
+    <img [src]="logoPath" alt="Logo" class="img-fluid logo " [class.scrolled]="isScrolled" [style.width]="logoWidth" [style.height]="logoHeight">
   </div>
 </nav>
 
@@ -32,13 +31,14 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         @for (item of items2; track $index) {
         <li class="nav-item">
-          <a class="nav-link second-link text-white" style="color: #0d1b4c !important;" href="#">{{ item.label }}</a>
+          <a class="nav-link second-link text-white" style="color: #0d1b4c !important;"  [href]="item.routerLink ">{{ item.label }}</a>
         </li>
         }
       </ul>
     </div>
 
-
-
   </div>
 </nav>
+<!-- <div class="content-container">
+  <router-outlet></router-outlet>
+</div> -->
