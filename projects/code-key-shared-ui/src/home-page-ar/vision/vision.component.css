@@ -1,0 +1,44 @@
+.vision-card {
+  color: #fff;
+  transition: transform 0.3s;
+  min-height: 200px;
+}
+
+.vision-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon i {
+  font-size: 2rem;
+}
+.vision-background{
+  background-color: #e8e8f8;
+  padding-top: 7rem;
+width: 95%;
+margin: auto;
+margin-top: -2rem;
+direction: rtl;
+  color: #0d1b4c;
+
+}
+
+.lead{
+}
+.btn-color{
+  background-color: #0d1b4c;
+  color: rgb(240, 234, 234);
+  position: relative;
+  left: 99px;
+  top: 47px;
+}
+.icon-color{
+    color: #123983;
+
+}
+
+.img-fluid{
+  position: relative;
+  top: 20px;
+  right: 15rem;
+  direction: rtl;
+}

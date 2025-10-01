@@ -1,0 +1,24 @@
+<div class="container2 py-5 faculties-page">
+  <!-- Header -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold ">الكليات والبرامج</h2>
+    <p class=" text-muted">
+      تضم جامعة الأقصر مجموعة متنوعة من الكليات والبرامج الأكاديمية التي تهدف إلى إعداد خريجين مؤهلين
+      قادرين على المنافسة محليًا ودوليًا.
+    </p>
+  </div>
+
+  <!-- Faculties Grid -->
+  <div class="row g-4">
+    <div class="col-md-4 col-sm-6" *ngFor="let faculty of faculties">
+      <div class="card h-100 shadow-sm border-0">
+        <img [src]="faculty.img" class="card-img-top" alt="{{ faculty.name }}">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold">{{ faculty.name }}</h5>
+          <p class="card-text text-muted">{{ faculty.description }}</p>
+          <button class="btn btn-outline-secondary btn-sm">عرض البرامج</button>
+        </div>
+      </div>
+       </div>
+  </div>
+</div>

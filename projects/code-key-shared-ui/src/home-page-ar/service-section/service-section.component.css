@@ -1,0 +1,49 @@
+.container2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #041243ab;
+  border-radius: 2px;
+  direction: rtl;
+}
+
+.container2 {
+  background: url('/assets/img/background2.png') repeat;
+  background-size: contain;
+  border-radius: 2px;
+  padding: 2rem;
+  position: relative;
+  width: 95%;
+  margin: 9.5% auto 0;
+  direction: rtl;
+}
+
+
+
+.container2 > .row {
+  position: relative;
+  z-index: 2;
+}
+
+.service-card {
+  background: #e9e9f7;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  background: #d6d6f5;
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #222;
+}
+
+p {
+  line-height: 1.8;
+}
