@@ -26,4 +26,8 @@ ContactUsComponent,FooterComponent,PhotoSliderComponent
 })
 export class App {
   protected readonly title = signal('demo-app');
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

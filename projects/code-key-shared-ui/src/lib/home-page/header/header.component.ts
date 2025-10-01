@@ -35,7 +35,7 @@ export class HeaderComponent {
     { label: 'Student Life', routerLink: '#student-life' },
     { label: 'Sectors', routerLink: '#sectors' },
     { label: 'Healthcare', routerLink: '#' },
-    { label: 'Contact-Us', routerLink: '#contact-us' }
+    { label: 'Contact-Us', routerLink: '#contact-us',icon:"bi bi-telephone" }
   ];
 
   @HostListener('window:scroll', [])
