@@ -32,7 +32,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-3">
         @for (item of items2; track $index) {
         <li class="nav-item d-flex">
-          <a class="nav-link second-link text-white"  style="color: #0d1b4c !important;" [href]="item.routerLink ">{{ item.label }}</a>
+          <a class="nav-link second-link text-white"  style="color: #0d1b4c !important;" [href]="item.routerLink" >{{ item.label }}</a>
           <i [class]="item.icon + ' item-icon2'"></i>
       </li>
         }

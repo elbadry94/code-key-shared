@@ -1,0 +1,32 @@
+.health-care h2, 
+.health-care h4 {
+  color: #1b1b6d;
+}
+.health-care{
+  width: 95%;
+  margin: auto;
+}
+
+.service-icon {
+  background: #e8e8f8;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  /* background-color: #1b1b6d !important;
+  color: #e8e8f8 !important; */
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);}
+ 
+ 
+  i{
+    color:#1b1b6d;
+  }

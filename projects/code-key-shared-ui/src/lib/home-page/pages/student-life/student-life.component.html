@@ -1,0 +1,42 @@
+<div class="student-life py-5" style="background-color:#f8f9fa;">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color:#1b1b6d;">Student Life at Luxor University</h2>
+      <p class="text-muted">
+        We are committed to providing a comprehensive environment that helps students develop academically, socially, and professionally.
+      </p>
+    </div>
+
+    <!-- Life Sections Cards -->
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let life of studentLife">
+        <div class="card h-100 shadow-sm border-0">
+          <!-- Icon -->
+          <div class="life-img bg-light d-flex justify-content-center align-items-center rounded-top" style="height:200px;">
+            <i [class]="life.icon + ' fs-1 text-muted'"></i>
+          </div>
+          <!-- Content -->
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color:#1b1b6d;">{{ life.title }}</h5>
+            <p class="text-muted small">{{ life.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="mt-5">
+      <h4 class="fw-bold mb-4" style="color:#1b1b6d;">📸 Student Activities Gallery</h4>
+      <div class="row g-3">
+        <div class="col-4 col-md-4 col-lg-3" *ngFor="let img of gallery">
+          <div class="rounded overflow-hidden shadow-sm">
+            <img [src]="img" class="img-fluid w-50" alt="Student Activity">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

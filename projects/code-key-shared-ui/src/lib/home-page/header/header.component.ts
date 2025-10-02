@@ -28,13 +28,13 @@ export class HeaderComponent {
   ];
 
   items2 = [
-    { label: 'Home', routerLink: '#' },
-    { label: 'About the University', routerLink: '#about' },
+    { label: 'Home', routerLink: '/' },
+    { label: 'About the University', routerLink: '/about' },
     { label: 'News', routerLink: '#news' },
-    { label: 'Faculties & Programs', routerLink: '#' },
-    { label: 'Student Life', routerLink: '#student-life' },
+    { label: 'Faculties & Programs', routerLink: '/faculties' },
+    { label: 'Student Life', routerLink: '/student-life' },
     { label: 'Sectors', routerLink: '#sectors' },
-    { label: 'Healthcare', routerLink: '#' },
+    { label: 'Healthcare', routerLink: '/health-care' },
     { label: 'Contact-Us', routerLink: '#contact-us',icon:"bi bi-telephone" }
   ];
 

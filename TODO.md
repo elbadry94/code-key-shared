@@ -1,0 +1,4 @@
+- [x] Fix import paths in projects/demo-app/src/app/luxor-home-page/luxor-home-page.component.ts by changing to from '@codekey-shared/code-key-shared-ui'
+- [x] Fix import paths and component names in projects/demo-app/src/app/app.ts by changing to from '@codekey-shared/code-key-shared-ui' and removing -ar from names
+- [x] Fix import paths and component names in projects/demo-app/src/app/app.routes.ts by changing to from '@codekey-shared/code-key-shared-ui' and removing -ar from names
+- [x] Fix selectors in projects/demo-app/src/app/app.html to remove -ar
