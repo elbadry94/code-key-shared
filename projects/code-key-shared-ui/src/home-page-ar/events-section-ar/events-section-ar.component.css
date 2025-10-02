@@ -1,0 +1,47 @@
+.event-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.event-content {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.event-date .date-box {
+  background: #e5e7fb;
+  border-radius: 6px;
+  padding: 10px 15px;
+  min-width: 100px;
+}
+
+.event-date .fw-bold {
+  font-size: 0.95rem;
+}
+
+.event-date .small {
+  font-size: 0.8rem;
+}
+
+.container2{
+  background-color:#e8e8f8 ;
+  direction: rtl;
+  color: #1b1b6d;
+  width: 95%;
+  margin: auto;
+  margin-top: -2rem;
+  padding-top: 4rem;
+  direction: rtl;
+}
+
+.btn:hover{
+    background-color:rgb(189, 181, 181) !important ;
+  color: #1b1b6d !important;
+
+}

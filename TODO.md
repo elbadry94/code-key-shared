@@ -1,0 +1,5 @@
+- [x] Import LuxorHomePageComponent and AboutComponent in app.routes.ts
+- [x] Update routes array to include default route for LuxorHomePageComponent and 'about' route for AboutComponent
+- [x] Modify app.html to include <lib-header> and <router-outlet>
+- [x] Remove <lib-header> from luxor-home-page.component.html
+- [x] Update routerLink for 'عن الجامعة' in header.component.ts from '#about' to '/about'

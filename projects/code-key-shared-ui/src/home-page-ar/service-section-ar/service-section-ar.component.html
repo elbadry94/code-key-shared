@@ -1,0 +1,40 @@
+<div class="container2 py-5">
+
+  <!-- قسم الخدمات -->
+  <div class="row text-center mb-5" style="direction: rtl;">
+    <div class="col-6 col-md-3 mb-3" *ngFor="let service of services">
+      <div class="service-card p-3 rounded shadow-sm h-100">
+        <i [class]="service.icon + ' service-icon'"></i>
+        <h6 class="mt-2">{{ service.title }}</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- كلمة رئيس الجامعة -->
+  <div class="row align-items-center g-4" style="direction: rtl;">
+     <!-- الصورة -->
+    <div class="col-md-4 text-center">
+      <img [src]="presidentPath" alt="رئيس الجامعة"
+        class="img-fluid rounded shadow-lg w-100" />
+    </div>
+    <!-- النص -->
+    <div class="col-md-8 text-white">
+      <h4 class="fw-bold mb-3">كلمة رئيس الجامعة</h4>
+      <p>
+        يسعدني أن أرحب بكم في جامعة الأقصر، هذه المؤسسة التعليمية المتميزة التي تمثل منارة للعلم والمعرفة في صعيد مصر.
+        نحن نفخر بتاريخنا العريق وتراثنا الثقافي الممتد لآلاف السنين.
+      </p>
+      <p>
+        تسعى جامعة الأقصر إلى تحقيق التميز في التعليم العالي والبحث العلمي، وإعداد خريجين مؤهلين قادرين على المنافسة
+        في سوق العمل المحلي والإقليمي والعالمي. نحن نؤمن بأهمية تطوير قدرات الطلاب وإعدادهم ليكونوا قادة المستقبل.
+      </p>
+      <p class="fw-bold">أ.د. صابرين جابر عبد الجليل</p>
+      <button class="btn btn-light mt-2">
+        اقرأ المزيد <i class="bi bi-arrow-left"></i>
+      </button>
+    </div>
+
+   
+  </div>
+
+</div>

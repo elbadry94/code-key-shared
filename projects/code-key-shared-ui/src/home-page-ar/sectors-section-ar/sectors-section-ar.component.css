@@ -1,0 +1,66 @@
+.background-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #041243ab;
+  border-radius: 2px;
+}
+.background-img{
+  background: url(/assets/img/background2.png) repeat;
+  background-size: contain;
+  border-radius: 2px;
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  width: 95%;
+  margin: -2rem auto 0;
+  direction: rtl !important;
+
+}
+
+
+/* الشكل الأساسي للكروت */
+.sector-card {
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  height: 150px;
+}
+
+/* .row > .col-12:nth-child(4) .sector-card {
+  height: 100px;
+}
+
+.row > .col-12:nth-child(3) .sector-card {
+  height: 130px;
+}
+
+.row > .col-12:nth-child(2) .sector-card {
+  height: 150px;
+}
+
+.row > .col-12:nth-child(1) .sector-card {
+  height: 180px;
+} */
+
+.row {
+  position: relative;
+  z-index: 2;
+}
+
+/* الكارت الكبير */
+.big-card {
+  height: 200px;
+}
+
+
+
+.sector-card:hover {
+  transform: scale(1.05);
+}

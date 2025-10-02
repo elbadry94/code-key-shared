@@ -62,16 +62,22 @@ export * from './lib/shared/services/settings/departments/departments.service';
 
 
 // export home page components
-export * from './lib/home-page/header/header.component';
-export * from './lib/home-page/service-section/service-section.component';
-export * from './lib/home-page/slider/slider.component';
-export * from './lib/home-page/vision/vision.component';
-export * from './lib/home-page/news/news.component';
-export * from './lib/home-page/sectors-section/sectors-section.component';
-export * from './lib/home-page/events-section/events-section.component';
-export * from './lib/home-page/logo-slider/logo-slider.component';
-export * from './lib/home-page/statistics-section/statistics-section.component';
-export * from './lib/home-page/contact-us/contact-us.component';
-export * from './lib/home-page/photo-slider/photo-slider.component'
-export * from './lib/home-page/footer/footer.component';
+export * from './home-page-ar/header-ar/header-ar.component';
+export * from './home-page-ar/service-section-ar/service-section-ar.component';
+export * from './home-page-ar/slider-ar/slider-ar.component';
+export * from './home-page-ar/vision-ar/vision-ar.component';
+export * from './home-page-ar/news-ar/news-ar.component';
+export * from './home-page-ar/sectors-section-ar/sectors-section-ar.component';
+export * from './home-page-ar/events-section-ar/events-section-ar.component';
+export * from './home-page-ar/logo-slider/logo-slider.component';
+export * from './home-page-ar/statistics-section-ar/statistics-section-ar.component';
+export * from './home-page-ar/contact-us-ar/contact-us-ar.component';
+export * from './home-page-ar/photo-slider-ar/photo-slider-ar.component'
+export * from './home-page-ar/footer-ar/footer-ar.component';
+export * from './home-page-ar/pages/about-ar/about-ar.component';
+export * from './home-page-ar/pages/faculties-programs-ar/faculties-programs-ar.component';
+export * from './home-page-ar/pages/student-life-ar/student-life-ar.component';
+export * from './home-page-ar/pages/health-care-ar/health-care-ar.component';
+
+
 

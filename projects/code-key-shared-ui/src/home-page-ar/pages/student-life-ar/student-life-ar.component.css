@@ -1,0 +1,26 @@
+.student-life h2, 
+.student-life h4 {
+  color: #1b1b6d;
+}
+
+.life-img {
+  background: #e8e8f8;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+.student-life{
+  width: 95%;
+  margin: auto;
+}

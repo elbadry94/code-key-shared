@@ -1,0 +1,79 @@
+<div style="background-color:#e8e8f8 ;width: 95%;
+  margin: auto;margin-top: -2rem;
+  padding-top: 4rem;direction:rtl">
+  <div class="container py-5">
+  <!-- العنوان -->
+  <div class="d-flex justify-content-between align-items-center mb-4" >
+    <h4 class="fw-bold">أحدث الأخبار</h4>
+<button class="btn" style="background-color:#1b1b6d; color:#e8e8f8;">
+  اقرأ المزيد <i class="bi bi-arrow-left"></i>
+</button>
+
+  </div>
+
+  <!-- السلايدر -->
+  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" >
+      <div
+        class="carousel-item"
+        *ngFor="let news of newsList; let i = index"
+        [class.active]="i === 0"
+      >
+        <div class="row g-4 align-items-center">
+            <!-- الصورة -->
+          <div class="col-md-6">
+            <div class="news-img bg-light d-flex justify-content-center align-items-center rounded">
+              <i class="bi bi-image text-muted fs-1"></i>
+            </div>
+          </div>
+          <!-- النص -->
+          <div class="col-md-6 text-end">
+            <h5 class="fw-bold">{{ news.title }}</h5>
+            <p>{{ news.description }}</p>
+            <small class="text-muted">{{ news.date }}</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- أزرار التنقل -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">السابق</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">التالي</span>
+    </button>
+
+    <!-- مؤشرات السلايدر -->
+    <div class="carousel-indicators mt-3">
+      <button
+        *ngFor="let news of newsList; let i = index"
+        type="button"
+        data-bs-target="#newsCarousel"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        aria-current="true"
+      ></button>
+    </div>
+  </div>
+
+  <!-- كروت الأخبار -->
+  <div class="row g-3 mt-4">
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let news of newsList">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="news-img-small bg-light d-flex justify-content-center align-items-center rounded">
+          <i class="bi bi-image text-muted fs-3"></i>
+        </div>
+        <div class="card-body text-end">
+          <h6 class="fw-bold">{{ news.title }}</h6>
+          <p class="text-muted small">{{ news.description }}...</p>
+          <small class="text-primary">{{ news.date }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
